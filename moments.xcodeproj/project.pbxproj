@@ -10,6 +10,9 @@
 		06139C86EA3ACF93E3F4E360 /* Pods_momentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B862552013E70AEF9FA7EF /* Pods_momentsTests.framework */; };
 		7C1E3787DDC02B4476C88C1E /* Pods_moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8B740496CE114ACD764FFF /* Pods_moments.framework */; };
 		AD0818E1407656E1ADE6563F /* Pods_momentsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F11029ECB8F52936E84157A /* Pods_momentsUITests.framework */; };
+		B55833841CA46D170039E04C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55833831CA46D170039E04C /* SignInViewController.swift */; };
+		B558338A1CA472C90039E04C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55833891CA472C90039E04C /* FBSDKCoreKit.framework */; };
+		B558338C1CA474BD0039E04C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B558338B1CA474BD0039E04C /* FBSDKLoginKit.framework */; };
 		EAC3FDA21CA3F24B0083C500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3FDA11CA3F24B0083C500 /* AppDelegate.swift */; };
 		EAC3FDA41CA3F24B0083C500 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3FDA31CA3F24B0083C500 /* ViewController.swift */; };
 		EAC3FDA71CA3F24B0083C500 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAC3FDA51CA3F24B0083C500 /* Main.storyboard */; };
@@ -43,6 +46,9 @@
 		718AFA6B434C4DB5B60D66AE /* Pods-momentsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-momentsUITests/Pods-momentsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		80B5C720F8B205219D4BC161 /* Pods-momentsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-momentsTests/Pods-momentsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A7382FDB7B04DB49BE9BA27C /* Pods-moments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moments.release.xcconfig"; path = "Pods/Target Support Files/Pods-moments/Pods-moments.release.xcconfig"; sourceTree = "<group>"; };
+		B55833831CA46D170039E04C /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		B55833891CA472C90039E04C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		B558338B1CA474BD0039E04C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		B59A63FD5AE53AFFCDEB9E19 /* Pods-moments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moments/Pods-moments.debug.xcconfig"; sourceTree = "<group>"; };
 		CD8B740496CE114ACD764FFF /* Pods_moments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7AF4C3A45E3929333F444FC /* Pods-momentsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-momentsTests/Pods-momentsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +73,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C1E3787DDC02B4476C88C1E /* Pods_moments.framework in Frameworks */,
+				B558338A1CA472C90039E04C /* FBSDKCoreKit.framework in Frameworks */,
+				B558338C1CA474BD0039E04C /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +100,8 @@
 		C12DC210C6995AA8A42D2EB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B558338B1CA474BD0039E04C /* FBSDKLoginKit.framework */,
+				B55833891CA472C90039E04C /* FBSDKCoreKit.framework */,
 				CD8B740496CE114ACD764FFF /* Pods_moments.framework */,
 				60B862552013E70AEF9FA7EF /* Pods_momentsTests.framework */,
 				3F11029ECB8F52936E84157A /* Pods_momentsUITests.framework */,
@@ -140,6 +150,7 @@
 				EAC3FDA11CA3F24B0083C500 /* AppDelegate.swift */,
 				EAC3FDA31CA3F24B0083C500 /* ViewController.swift */,
 				EAC3FDA51CA3F24B0083C500 /* Main.storyboard */,
+				B55833831CA46D170039E04C /* SignInViewController.swift */,
 				EAC3FDA81CA3F24B0083C500 /* Assets.xcassets */,
 				EAC3FDAA1CA3F24B0083C500 /* LaunchScreen.storyboard */,
 				EAC3FDAD1CA3F24B0083C500 /* Info.plist */,
@@ -429,6 +440,7 @@
 			files = (
 				EAC3FDA41CA3F24B0083C500 /* ViewController.swift in Sources */,
 				EAC3FDA21CA3F24B0083C500 /* AppDelegate.swift in Sources */,
+				B55833841CA46D170039E04C /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +581,10 @@
 			baseConfigurationReference = B59A63FD5AE53AFFCDEB9E19 /* Pods-moments.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = moments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.moments.moments;
@@ -581,6 +597,10 @@
 			baseConfigurationReference = A7382FDB7B04DB49BE9BA27C /* Pods-moments.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = moments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.moments.moments;
