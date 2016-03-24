@@ -7,14 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06139C86EA3ACF93E3F4E360 /* Pods_momentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B862552013E70AEF9FA7EF /* Pods_momentsTests.framework */; };
+		7C1E3787DDC02B4476C88C1E /* Pods_moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8B740496CE114ACD764FFF /* Pods_moments.framework */; };
+		AD0818E1407656E1ADE6563F /* Pods_momentsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F11029ECB8F52936E84157A /* Pods_momentsUITests.framework */; };
 		EAC3FDA21CA3F24B0083C500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3FDA11CA3F24B0083C500 /* AppDelegate.swift */; };
 		EAC3FDA41CA3F24B0083C500 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3FDA31CA3F24B0083C500 /* ViewController.swift */; };
 		EAC3FDA71CA3F24B0083C500 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAC3FDA51CA3F24B0083C500 /* Main.storyboard */; };
 		EAC3FDA91CA3F24B0083C500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAC3FDA81CA3F24B0083C500 /* Assets.xcassets */; };
 		EAC3FDAC1CA3F24B0083C500 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAC3FDAA1CA3F24B0083C500 /* LaunchScreen.storyboard */; };
+		EAC3FDBA1CA3F4470083C500 /* momentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3FDB91CA3F4470083C500 /* momentsUITests.swift */; };
+		EAC3FDC81CA3F4580083C500 /* momentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3FDC71CA3F4580083C500 /* momentsTests.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		EAC3FDBC1CA3F4470083C500 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAC3FD961CA3F24B0083C500 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAC3FD9D1CA3F24B0083C500;
+			remoteInfo = moments;
+		};
+		EAC3FDCA1CA3F4580083C500 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAC3FD961CA3F24B0083C500 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAC3FD9D1CA3F24B0083C500;
+			remoteInfo = moments;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		268328640982210A522001E5 /* Pods-momentsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-momentsUITests/Pods-momentsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3F11029ECB8F52936E84157A /* Pods_momentsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_momentsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60B862552013E70AEF9FA7EF /* Pods_momentsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_momentsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		718AFA6B434C4DB5B60D66AE /* Pods-momentsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-momentsUITests/Pods-momentsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		80B5C720F8B205219D4BC161 /* Pods-momentsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-momentsTests/Pods-momentsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A7382FDB7B04DB49BE9BA27C /* Pods-moments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moments.release.xcconfig"; path = "Pods/Target Support Files/Pods-moments/Pods-moments.release.xcconfig"; sourceTree = "<group>"; };
+		B59A63FD5AE53AFFCDEB9E19 /* Pods-moments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moments/Pods-moments.debug.xcconfig"; sourceTree = "<group>"; };
+		CD8B740496CE114ACD764FFF /* Pods_moments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7AF4C3A45E3929333F444FC /* Pods-momentsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-momentsTests/Pods-momentsTests.release.xcconfig"; sourceTree = "<group>"; };
 		EAC3FD9E1CA3F24B0083C500 /* moments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC3FDA11CA3F24B0083C500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAC3FDA31CA3F24B0083C500 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +53,12 @@
 		EAC3FDA81CA3F24B0083C500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAC3FDAB1CA3F24B0083C500 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAC3FDAD1CA3F24B0083C500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAC3FDB71CA3F4470083C500 /* momentsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = momentsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAC3FDB91CA3F4470083C500 /* momentsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = momentsUITests.swift; sourceTree = "<group>"; };
+		EAC3FDBB1CA3F4470083C500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAC3FDC51CA3F4580083C500 /* momentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = momentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAC3FDC71CA3F4580083C500 /* momentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = momentsTests.swift; sourceTree = "<group>"; };
+		EAC3FDC91CA3F4580083C500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +66,61 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C1E3787DDC02B4476C88C1E /* Pods_moments.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAC3FDB41CA3F4470083C500 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD0818E1407656E1ADE6563F /* Pods_momentsUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAC3FDC21CA3F4580083C500 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06139C86EA3ACF93E3F4E360 /* Pods_momentsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C12DC210C6995AA8A42D2EB3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD8B740496CE114ACD764FFF /* Pods_moments.framework */,
+				60B862552013E70AEF9FA7EF /* Pods_momentsTests.framework */,
+				3F11029ECB8F52936E84157A /* Pods_momentsUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1026421DEA7A7F6A17BEF57 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B59A63FD5AE53AFFCDEB9E19 /* Pods-moments.debug.xcconfig */,
+				A7382FDB7B04DB49BE9BA27C /* Pods-moments.release.xcconfig */,
+				80B5C720F8B205219D4BC161 /* Pods-momentsTests.debug.xcconfig */,
+				E7AF4C3A45E3929333F444FC /* Pods-momentsTests.release.xcconfig */,
+				718AFA6B434C4DB5B60D66AE /* Pods-momentsUITests.debug.xcconfig */,
+				268328640982210A522001E5 /* Pods-momentsUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EAC3FD951CA3F24B0083C500 = {
 			isa = PBXGroup;
 			children = (
 				EAC3FDA01CA3F24B0083C500 /* moments */,
+				EAC3FDB81CA3F4470083C500 /* momentsUITests */,
+				EAC3FDC61CA3F4580083C500 /* momentsTests */,
 				EAC3FD9F1CA3F24B0083C500 /* Products */,
+				D1026421DEA7A7F6A17BEF57 /* Pods */,
+				C12DC210C6995AA8A42D2EB3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				EAC3FD9E1CA3F24B0083C500 /* moments.app */,
+				EAC3FDB71CA3F4470083C500 /* momentsUITests.xctest */,
+				EAC3FDC51CA3F4580083C500 /* momentsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,6 +147,24 @@
 			path = moments;
 			sourceTree = "<group>";
 		};
+		EAC3FDB81CA3F4470083C500 /* momentsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EAC3FDB91CA3F4470083C500 /* momentsUITests.swift */,
+				EAC3FDBB1CA3F4470083C500 /* Info.plist */,
+			);
+			path = momentsUITests;
+			sourceTree = "<group>";
+		};
+		EAC3FDC61CA3F4580083C500 /* momentsTests */ = {
+			isa = PBXGroup;
+			children = (
+				EAC3FDC71CA3F4580083C500 /* momentsTests.swift */,
+				EAC3FDC91CA3F4580083C500 /* Info.plist */,
+			);
+			path = momentsTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAC3FDB01CA3F24B0083C500 /* Build configuration list for PBXNativeTarget "moments" */;
 			buildPhases = (
+				366BA2CDA78E447B132E930C /* Check Pods Manifest.lock */,
 				EAC3FD9A1CA3F24B0083C500 /* Sources */,
 				EAC3FD9B1CA3F24B0083C500 /* Frameworks */,
 				EAC3FD9C1CA3F24B0083C500 /* Resources */,
+				7E0673BD8F9B5C6E893C88D8 /* Embed Pods Frameworks */,
+				C14EE05834E20F97AA016297 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -83,6 +187,47 @@
 			productName = moments;
 			productReference = EAC3FD9E1CA3F24B0083C500 /* moments.app */;
 			productType = "com.apple.product-type.application";
+		};
+		EAC3FDB61CA3F4470083C500 /* momentsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAC3FDBE1CA3F4470083C500 /* Build configuration list for PBXNativeTarget "momentsUITests" */;
+			buildPhases = (
+				53DEF57C3F8A3BD5A7FCD405 /* Check Pods Manifest.lock */,
+				EAC3FDB31CA3F4470083C500 /* Sources */,
+				EAC3FDB41CA3F4470083C500 /* Frameworks */,
+				EAC3FDB51CA3F4470083C500 /* Resources */,
+				0CC27A2FB622E812798E60FF /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EAC3FDBD1CA3F4470083C500 /* PBXTargetDependency */,
+			);
+			name = momentsUITests;
+			productName = momentsUITests;
+			productReference = EAC3FDB71CA3F4470083C500 /* momentsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		EAC3FDC41CA3F4580083C500 /* momentsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAC3FDCC1CA3F4580083C500 /* Build configuration list for PBXNativeTarget "momentsTests" */;
+			buildPhases = (
+				A7ACBABC1FE29F74ECFCC115 /* Check Pods Manifest.lock */,
+				EAC3FDC11CA3F4580083C500 /* Sources */,
+				EAC3FDC21CA3F4580083C500 /* Frameworks */,
+				EAC3FDC31CA3F4580083C500 /* Resources */,
+				0DD59A372FF0A9C0DA02CCDE /* Embed Pods Frameworks */,
+				378141F99BBC9D061BEEC01C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EAC3FDCB1CA3F4580083C500 /* PBXTargetDependency */,
+			);
+			name = momentsTests;
+			productName = momentsTests;
+			productReference = EAC3FDC51CA3F4580083C500 /* momentsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -96,6 +241,14 @@
 				TargetAttributes = {
 					EAC3FD9D1CA3F24B0083C500 = {
 						CreatedOnToolsVersion = 7.2;
+					};
+					EAC3FDB61CA3F4470083C500 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = EAC3FD9D1CA3F24B0083C500;
+					};
+					EAC3FDC41CA3F4580083C500 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = EAC3FD9D1CA3F24B0083C500;
 					};
 				};
 			};
@@ -113,6 +266,8 @@
 			projectRoot = "";
 			targets = (
 				EAC3FD9D1CA3F24B0083C500 /* moments */,
+				EAC3FDB61CA3F4470083C500 /* momentsUITests */,
+				EAC3FDC41CA3F4580083C500 /* momentsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -128,7 +283,144 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EAC3FDB51CA3F4470083C500 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAC3FDC31CA3F4580083C500 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CC27A2FB622E812798E60FF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-momentsUITests/Pods-momentsUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0DD59A372FF0A9C0DA02CCDE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-momentsTests/Pods-momentsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		366BA2CDA78E447B132E930C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		378141F99BBC9D061BEEC01C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-momentsTests/Pods-momentsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53DEF57C3F8A3BD5A7FCD405 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7E0673BD8F9B5C6E893C88D8 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-moments/Pods-moments-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7ACBABC1FE29F74ECFCC115 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C14EE05834E20F97AA016297 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-moments/Pods-moments-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EAC3FD9A1CA3F24B0083C500 /* Sources */ = {
@@ -140,7 +432,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EAC3FDB31CA3F4470083C500 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAC3FDBA1CA3F4470083C500 /* momentsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAC3FDC11CA3F4580083C500 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAC3FDC81CA3F4580083C500 /* momentsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EAC3FDBD1CA3F4470083C500 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EAC3FD9D1CA3F24B0083C500 /* moments */;
+			targetProxy = EAC3FDBC1CA3F4470083C500 /* PBXContainerItemProxy */;
+		};
+		EAC3FDCB1CA3F4580083C500 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EAC3FD9D1CA3F24B0083C500 /* moments */;
+			targetProxy = EAC3FDCA1CA3F4580083C500 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EAC3FDA51CA3F24B0083C500 /* Main.storyboard */ = {
@@ -245,6 +566,7 @@
 		};
 		EAC3FDB11CA3F24B0083C500 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B59A63FD5AE53AFFCDEB9E19 /* Pods-moments.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = moments/Info.plist;
@@ -256,12 +578,65 @@
 		};
 		EAC3FDB21CA3F24B0083C500 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7382FDB7B04DB49BE9BA27C /* Pods-moments.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = moments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.moments.moments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EAC3FDBF1CA3F4470083C500 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 718AFA6B434C4DB5B60D66AE /* Pods-momentsUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = momentsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.moments.momentsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = moments;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		EAC3FDC01CA3F4470083C500 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 268328640982210A522001E5 /* Pods-momentsUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = momentsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.moments.momentsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = moments;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+		EAC3FDCD1CA3F4580083C500 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80B5C720F8B205219D4BC161 /* Pods-momentsTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = momentsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.moments.momentsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/moments.app/moments";
+			};
+			name = Debug;
+		};
+		EAC3FDCE1CA3F4580083C500 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7AF4C3A45E3929333F444FC /* Pods-momentsTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = momentsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.moments.momentsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/moments.app/moments";
 			};
 			name = Release;
 		};
@@ -284,6 +659,25 @@
 				EAC3FDB21CA3F24B0083C500 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAC3FDBE1CA3F4470083C500 /* Build configuration list for PBXNativeTarget "momentsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAC3FDBF1CA3F4470083C500 /* Debug */,
+				EAC3FDC01CA3F4470083C500 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAC3FDCC1CA3F4580083C500 /* Build configuration list for PBXNativeTarget "momentsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAC3FDCD1CA3F4580083C500 /* Debug */,
+				EAC3FDCE1CA3F4580083C500 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

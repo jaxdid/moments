@@ -1,0 +1,6 @@
+framework module Pods_momentsTests {
+  umbrella header "Pods-momentsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
