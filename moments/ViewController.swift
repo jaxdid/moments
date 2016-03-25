@@ -3,8 +3,7 @@ import MapKit
 import CoreLocation
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-    var locationManager = CLLocationManager()
-    
+    let locationManager = CLLocationManager()
     
     @IBOutlet var map: MKMapView!
     override func viewDidLoad() {
@@ -31,6 +30,4 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-
 }
