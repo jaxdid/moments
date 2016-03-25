@@ -19,7 +19,7 @@
 		EAC3FDA91CA3F24B0083C500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAC3FDA81CA3F24B0083C500 /* Assets.xcassets */; };
 		EAC3FDAC1CA3F24B0083C500 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAC3FDAA1CA3F24B0083C500 /* LaunchScreen.storyboard */; };
 		EAC3FDBA1CA3F4470083C500 /* momentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3FDB91CA3F4470083C500 /* momentsUITests.swift */; };
-		EAC3FDC81CA3F4580083C500 /* momentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3FDC71CA3F4580083C500 /* momentsTests.swift */; };
+		EAD58E381CA437C800E85D4C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD58E371CA437C800E85D4C /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +63,8 @@
 		EAC3FDB91CA3F4470083C500 /* momentsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = momentsUITests.swift; sourceTree = "<group>"; };
 		EAC3FDBB1CA3F4470083C500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAC3FDC51CA3F4580083C500 /* momentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = momentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EAC3FDC71CA3F4580083C500 /* momentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = momentsTests.swift; sourceTree = "<group>"; };
 		EAC3FDC91CA3F4580083C500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAD58E371CA437C800E85D4C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAD58E381CA437C800E85D4C /* CoreLocation.framework in Frameworks */,
 				7C1E3787DDC02B4476C88C1E /* Pods_moments.framework in Frameworks */,
 				B558338A1CA472C90039E04C /* FBSDKCoreKit.framework in Frameworks */,
 				B558338C1CA474BD0039E04C /* FBSDKLoginKit.framework in Frameworks */,
@@ -102,6 +103,7 @@
 			children = (
 				B558338B1CA474BD0039E04C /* FBSDKLoginKit.framework */,
 				B55833891CA472C90039E04C /* FBSDKCoreKit.framework */,
+				EAD58E371CA437C800E85D4C /* CoreLocation.framework */,
 				CD8B740496CE114ACD764FFF /* Pods_moments.framework */,
 				60B862552013E70AEF9FA7EF /* Pods_momentsTests.framework */,
 				3F11029ECB8F52936E84157A /* Pods_momentsUITests.framework */,
@@ -170,7 +172,6 @@
 		EAC3FDC61CA3F4580083C500 /* momentsTests */ = {
 			isa = PBXGroup;
 			children = (
-				EAC3FDC71CA3F4580083C500 /* momentsTests.swift */,
 				EAC3FDC91CA3F4580083C500 /* Info.plist */,
 			);
 			path = momentsTests;
@@ -252,7 +253,7 @@
 				TargetAttributes = {
 					EAC3FD9D1CA3F24B0083C500 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 3JG5F6T89H;
+						DevelopmentTeam = KXQ8F9SK2C;
 					};
 					EAC3FDB61CA3F4470083C500 = {
 						CreatedOnToolsVersion = 7.2;
@@ -457,7 +458,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAC3FDC81CA3F4580083C500 /* momentsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,7 +590,7 @@
 				);
 				INFOPLIST_FILE = moments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.momentsahl.moments;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makersmoments.moments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -609,7 +609,7 @@
 				);
 				INFOPLIST_FILE = moments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.momentsahl.moments;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makersmoments.moments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -646,10 +646,12 @@
 			baseConfigurationReference = 80B5C720F8B205219D4BC161 /* Pods-momentsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = momentsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.moments.momentsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/moments.app/moments";
 			};
 			name = Debug;
@@ -659,6 +661,7 @@
 			baseConfigurationReference = E7AF4C3A45E3929333F444FC /* Pods-momentsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = momentsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.moments.momentsTests;
