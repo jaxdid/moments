@@ -25,6 +25,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let location: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
         let region: MKCoordinateRegion = MKCoordinateRegionMake(location, span)
         map.setRegion(region, animated: true)
+        map.showsUserLocation = true
     }
 
     override func didReceiveMemoryWarning() {
