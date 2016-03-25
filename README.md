@@ -9,23 +9,10 @@
 - Bjoern Wagner - https://github.com/BjoernWagner
 
 ## User Stories
-
-```
-As a user,
-So that I can participate in the app,
-I want to see a map.
-```
-
 ```
 As a user,
 So that I can see activity in my area,
 I want to be able to see Moments within a 1-mile radius.
-```
-
-```
-As a user,
-So that I can see activity in other areas,
-I want to be able to pan and zoom the map.
 ```
 
 ```
@@ -82,3 +69,16 @@ As a user,
 So that I can have control over my Moment,
 I want to be able to delete a Moment I've created.
 ```
+
+#Implemented User Stories
+```
+As a user,
+So that I can participate in the app,
+I want to see a map.
+```
+```
+As a user,
+So that I can see activity in other areas,
+I want to be able to pan and zoom the map.
+```
+:construction:
