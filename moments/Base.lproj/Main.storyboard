@@ -17,20 +17,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qv-B6-lFs">
-                                <rect key="frame" x="69" y="230" width="150" height="30"/>
-                                <state key="normal" title="Sign in with Facebook"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qv-B6-lFs">
+                                <rect key="frame" x="42" y="256" width="237" height="56"/>
+                                <state key="normal" title="Sign in with Facebook" image="fb_login"/>
                                 <connections>
                                     <action selector="SignIn:" destination="e9V-yt-wi6" eventType="touchUpInside" id="VCu-jN-KG8"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4qv-B6-lFs" firstAttribute="top" secondItem="WRg-rj-2A1" secondAttribute="bottom" constant="236" id="WAJ-E6-R2K"/>
+                            <constraint firstItem="4qv-B6-lFs" firstAttribute="centerX" secondItem="YoR-tc-faO" secondAttribute="centerX" id="wwB-Nm-lE5"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nDT-ke-mG1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="56.533333333333331" y="-271.69333333333333"/>
+            <point key="canvasLocation" x="56" y="-272"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -50,6 +54,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="pS0-ya-iPL"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="map" destination="daW-g0-znu" id="9la-iK-R3E"/>
@@ -57,7 +62,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74.400000000000006" y="425.52666666666664"/>
+            <point key="canvasLocation" x="56.5" y="615.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fb_login" width="580" height="124"/>
+    </resources>
 </document>
