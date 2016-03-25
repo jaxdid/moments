@@ -25,6 +25,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let region: MKCoordinateRegion = MKCoordinateRegionMake(location, span)
         map.setRegion(region, animated: true)
         map.showsUserLocation = true
+        locationManager.stopUpdatingLocation()
     }
 
     override func didReceiveMemoryWarning() {
