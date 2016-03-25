@@ -81,4 +81,3 @@ As a user,
 So that I can see activity in other areas,
 I want to be able to pan and zoom the map.
 ```
-:construction:
