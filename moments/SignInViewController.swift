@@ -41,6 +41,7 @@ class SignInViewController: UIViewController {
                             print("Login failed. \(error)")
                         } else {
                             print("Logged in! \(authData)")
+                            self.performSegueWithIdentifier("mapIdentifier", sender: self)
                         }
                 })
             }
