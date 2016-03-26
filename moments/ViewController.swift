@@ -4,6 +4,8 @@ import CoreLocation
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
+    var latitude: Double!
+    var longitude: Double!
     
     @IBOutlet var map: MKMapView!
     override func viewDidLoad() {
@@ -16,8 +18,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation: CLLocation = locations[0]
-        let latitude = userLocation.coordinate.latitude
-        let longitude = userLocation.coordinate.longitude
+        latitude = userLocation.coordinate.latitude
+        longitude = userLocation.coordinate.longitude
         let latDelta: CLLocationDegrees = 0.001
         let longDelta: CLLocationDegrees = 0.001
         let span: MKCoordinateSpan = MKCoordinateSpanMake(latDelta, longDelta)
@@ -30,5 +32,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destinationController = segue.destinationViewController as? CreateMomentController {
+            destinationController.latitude = latitude
+            destinationController.longitude = longitude
+        }
     }
 }

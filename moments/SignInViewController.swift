@@ -1,11 +1,3 @@
-//
-//  SignInViewController.swift
-//  moments
-//
-//  Created by Alain on 3/24/16.
-//  Copyright © 2016 moments. All rights reserved.
-//
-
 import UIKit
 import Firebase
 import FBSDKCoreKit

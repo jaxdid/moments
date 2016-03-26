@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="e9V-yt-wi6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="e9V-yt-wi6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Sign In View Controller-->
         <scene sceneID="Ubg-dh-ttp">
             <objects>
                 <viewController id="e9V-yt-wi6" customClass="SignInViewController" customModule="moments" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EZF-BK-lgu"/>
+                        <viewControllerLayoutGuide type="bottom" id="haL-Sd-Kfb"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YoR-tc-faO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4qv-B6-lFs">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qv-B6-lFs">
                                 <rect key="frame" x="42" y="256" width="237" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign in with Facebook" image="fb_login"/>
                                 <connections>
                                     <action selector="SignIn:" destination="e9V-yt-wi6" eventType="touchUpInside" id="VCu-jN-KG8"/>
@@ -23,29 +27,58 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4qv-B6-lFs" firstAttribute="top" secondItem="EZF-BK-lgu" secondAttribute="bottom" constant="236" id="EL5-H3-AJd"/>
+                            <constraint firstItem="haL-Sd-Kfb" firstAttribute="top" secondItem="4qv-B6-lFs" secondAttribute="bottom" constant="355" id="eLt-m9-ryF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4qv-B6-lFs" secondAttribute="trailing" constant="80" id="h4j-Td-CIP"/>
+                            <constraint firstItem="4qv-B6-lFs" firstAttribute="leading" secondItem="YoR-tc-faO" secondAttribute="leadingMargin" constant="26" id="pem-te-Pl2"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="modal" identifier="mapIdentifier" id="Do6-xb-96j"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="mapIdentifier" id="Do6-xb-96j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nDT-ke-mG1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-310" y="-214"/>
+            <point key="canvasLocation" x="-581.25" y="-226.05633802816899"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="moments" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="moments" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6K7-rb-XAx"/>
+                        <viewControllerLayoutGuide type="bottom" id="nn8-D8-tqD"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="daW-g0-znu">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="daW-g0-znu">
                                 <rect key="frame" x="0.0" y="28" width="375" height="639"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsK-Ol-Re6">
+                                <rect key="frame" x="205" y="612" width="150" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="crj-h3-2vh"/>
+                                </constraints>
+                                <state key="normal" title="Create A Moment"/>
+                                <connections>
+                                    <segue destination="kzz-yk-NdL" kind="show" id="PAs-i1-ZVk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="daW-g0-znu" secondAttribute="trailing" id="1FF-QV-0dP"/>
+                            <constraint firstItem="rsK-Ol-Re6" firstAttribute="top" secondItem="6K7-rb-XAx" secondAttribute="bottom" constant="592" id="5jO-Il-pdA"/>
+                            <constraint firstItem="daW-g0-znu" firstAttribute="bottom" secondItem="nn8-D8-tqD" secondAttribute="top" id="DZM-VP-cj4"/>
+                            <constraint firstItem="daW-g0-znu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Mfd-sc-aaE"/>
+                            <constraint firstAttribute="bottom" secondItem="rsK-Ol-Re6" secondAttribute="bottom" constant="20" symbolic="YES" id="cAL-5b-9dX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rsK-Ol-Re6" secondAttribute="trailing" constant="4" id="fMH-Mn-Euh"/>
+                            <constraint firstItem="daW-g0-znu" firstAttribute="top" secondItem="6K7-rb-XAx" secondAttribute="bottom" constant="8" symbolic="YES" id="vLj-Ku-kV9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pS0-ya-iPL"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -55,7 +88,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="112.5" y="-182.5"/>
+            <point key="canvasLocation" x="210.9375" y="-226.58450704225351"/>
+        </scene>
+        <!--Create Moment Controller-->
+        <scene sceneID="Mdv-Q8-iRT">
+            <objects>
+                <viewController storyboardIdentifier="CreateMomentController" id="kzz-yk-NdL" customClass="CreateMomentController" customModule="moments" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dfl-fa-xrq"/>
+                        <viewControllerLayoutGuide type="bottom" id="5zS-Um-RaG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L6r-bc-ZDh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="w2V-DR-vbm"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ULW-y5-0GI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="998.4375" y="-226.58450704225351"/>
         </scene>
     </scenes>
     <resources>
