@@ -26,5 +26,9 @@ class CreateMomentUnitTests: XCTestCase {
         super.tearDown()
     }
 
+    func testControllerHasAccessToCoordinates() {
+        XCTAssertTrue(createMomentController.latitude)
+        XCTAssertTrue(createMomentController.longitude)
+    }
 
 }

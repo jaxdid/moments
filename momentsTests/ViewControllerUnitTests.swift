@@ -11,16 +11,8 @@ import XCTest
 
 class ViewControllerUnitTests: XCTestCase {
     
-    var viewController : ViewController!
-    
     override func setUp() {
         super.setUp()
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        viewController = storyboard.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
-        UIApplication.sharedApplication().keyWindow!.rootViewController = viewController
-        
-        let _ = viewController.view
     }
     
     override func tearDown() {

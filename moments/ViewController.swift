@@ -39,5 +39,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             destinationController.latitude = latitude
             destinationController.longitude = longitude
         }
+        segue.sourceViewController
     }
 }
