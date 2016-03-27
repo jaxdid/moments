@@ -79,4 +79,3 @@ As a user,
 So that I can return to my local area,
 I want to be able to recenter the map on my current location.
 ```
-:construction:
