@@ -270,7 +270,7 @@
 				TargetAttributes = {
 					EAC3FD9D1CA3F24B0083C500 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 2TL6MR9Z8E;
+						DevelopmentTeam = 3JG5F6T89H;
 					};
 					EAC3FDB61CA3F4470083C500 = {
 						CreatedOnToolsVersion = 7.2;
@@ -610,7 +610,7 @@
 				);
 				INFOPLIST_FILE = moments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.makersmoments.moments.rj;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makersmomentsahl.moments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -629,7 +629,7 @@
 				);
 				INFOPLIST_FILE = moments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.makersmoments.moments.rj;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makersmomentsahl.moments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
