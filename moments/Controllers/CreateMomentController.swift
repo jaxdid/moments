@@ -72,6 +72,8 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
                   "user": self.userId]
     let momentRef = momentsRef.childByAutoId()
     momentRef.setValue(moment)
+    
+    self.performSegueWithIdentifier("submitMoment", sender: nil)
   }
 }
 
