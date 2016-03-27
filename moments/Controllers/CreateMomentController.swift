@@ -1,16 +1,13 @@
-import UIKit
+import CoreLocation
 import Firebase
+import UIKit
 
 class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate {
-  var latitude: Double!
-  var longitude: Double!
-  var authData: AnyObject!
-
-  let characterLimit = 30
-  private var selectedUnicode: String = ""
+  var userLocation: CLLocation!
   let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
-  var userId: String!
-  
+  private let characterLimit = 30
+  private var selectedMomoji = ""
+  private var userId: String!
   @IBOutlet weak var pickerView: UIPickerView!
   @IBOutlet weak var textField: UITextField!
   
@@ -18,12 +15,8 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
     super.viewDidLoad()
     pickerView.delegate = self
     textField.delegate = self
-    
     momentsRef.observeAuthEventWithBlock { authData in
-      if authData != nil {
-        self.userId = authData.uid
-        print("User from Create Moment ctrl: \(self.userId)")
-      }
+      self.userId = authData.uid
     }
   }
   
@@ -46,10 +39,10 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
     switch row {
     case 0:
       myImageView = UIImageView(image: UIImage(named:"grinning_face"))
-      selectedUnicode = "U+1F600"
+      selectedMomoji = "U+1F600"
     case 1:
       myImageView = UIImageView(image: UIImage(named:"joy"))
-      selectedUnicode = "U+1F602"
+      selectedMomoji = "U+1F602"
     default:
       myImageView.image = nil
     }
@@ -64,19 +57,12 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   }
   
   @IBAction func createMoment(sender: UIButton) {
-    //print(self.pickerView.selectedRowInComponent(0))
-    let moment = ["momoji": selectedUnicode,
+    let moment = ["momoji": selectedMomoji,
                   "text": textField.text!,
-                  "latitude": latitude,
-                  "longitude": longitude,
+                  "latitude": self.userLocation.coordinate.latitude,
+                  "longitude": self.userLocation.coordinate.longitude,
                   "user": self.userId]
     let momentRef = momentsRef.childByAutoId()
     momentRef.setValue(moment)
-    
-    self.performSegueWithIdentifier("submitMoment", sender: nil)
   }
 }
-
-
-
-

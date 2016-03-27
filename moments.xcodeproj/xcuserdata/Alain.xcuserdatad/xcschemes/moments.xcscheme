@@ -81,6 +81,13 @@
             ReferencedContainer = "container:moments.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "FIREBASE_URL"
+            value = "https://makersmoments.firebaseio.com/"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
