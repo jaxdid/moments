@@ -1,12 +1,14 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Firebase
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var latitude: Double!
     var longitude: Double!
-    
+    let ref = Firebase(url: "https://makersmoments.firebaseio.com")
+  
     @IBOutlet var map: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,6 +16,13 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+      
+      ref.observeAuthEventWithBlock { authData in
+        if authData != nil {
+          var user = User(authData: authData)
+          print(user)
+        }
+      }
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

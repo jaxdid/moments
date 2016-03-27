@@ -1,11 +1,15 @@
 import UIKit
+import Firebase
 
 class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate {
   var latitude: Double!
   var longitude: Double!
+  var authData: AnyObject!
 
   let characterLimit = 30
   private var selectedUnicode: String = ""
+  let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
+  var userId: String!
   
   @IBOutlet weak var pickerView: UIPickerView!
   @IBOutlet weak var textField: UITextField!
@@ -14,6 +18,13 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
     super.viewDidLoad()
     pickerView.delegate = self
     textField.delegate = self
+    
+    momentsRef.observeAuthEventWithBlock { authData in
+      if authData != nil {
+        self.userId = authData.uid
+        print("User from Create Moment ctrl: \(self.userId)")
+      }
+    }
   }
   
   func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -54,9 +65,13 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   
   @IBAction func createMoment(sender: UIButton) {
     //print(self.pickerView.selectedRowInComponent(0))
-    print("Unicode: \(selectedUnicode)")
-    print("Text: \(self.textField.text!)")
-    print("Location: \(latitude), \(longitude)")
+    let moment = ["momoji": selectedUnicode,
+                  "text": textField.text!,
+                  "latitude": latitude,
+                  "longitude": longitude,
+                  "user": self.userId]
+    let momentRef = momentsRef.childByAutoId()
+    momentRef.setValue(moment)
   }
 }
 

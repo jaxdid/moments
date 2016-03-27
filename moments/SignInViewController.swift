@@ -27,11 +27,30 @@ class SignInViewController: UIViewController {
                 ref.authWithOAuthProvider("facebook", token: accessToken,
                     withCompletionBlock: { error, authData in
                         if error != nil {
-                            print("Login failed. \(error)")
+                          print("Login failed. \(error)")
                         } else {
-                            print("Logged in! \(authData)")
-                            self.performSegueWithIdentifier("mapIdentifier", sender: self)
+                          print("Logged in! \(authData.uid)")
+                          
+//                          ref.createUser(authData.uid) { (error: NSError!) in
+//                            if error == nil {
+//                              self.ref.authUser(
+//                                withCompletionBlock: { (error, auth) -> Void in
+//                                  // 4
+//                              })
+//                            }
+//                          }
+                          
+                          
+                          
+                            ref.observeAuthEventWithBlock { (authData) -> Void in
+                              if authData != nil {
+                                self.performSegueWithIdentifier("mapIdentifier", sender: nil)
+                              }
+                            }
+                          
+                            //self.performSegueWithIdentifier("mapIdentifier", sender: self)
                         }
+                      
                 })
             }
         })
