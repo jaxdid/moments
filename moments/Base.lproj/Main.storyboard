@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Sign In View Controller-->
+        <!--Sign In Controller-->
         <scene sceneID="Ubg-dh-ttp">
             <objects>
-                <viewController id="e9V-yt-wi6" customClass="SignInViewController" customModule="moments" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInController" id="e9V-yt-wi6" customClass="SignInController" customModule="moments" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EZF-BK-lgu"/>
                         <viewControllerLayoutGuide type="bottom" id="haL-Sd-Kfb"/>
@@ -18,34 +18,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pyo-nM-dTX">
-                                <rect key="frame" x="42" y="256" width="757" height="124"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qv-B6-lFs">
-                                        <rect key="frame" x="0.0" y="0.0" width="757" height="124"/>
-                                        <state key="normal" title="Sign in with Facebook" image="fb_login"/>
-                                        <connections>
-                                            <action selector="SignIn:" destination="e9V-yt-wi6" eventType="touchUpInside" id="VCu-jN-KG8"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qv-B6-lFs">
+                                <rect key="frame" x="59" y="306" width="256" height="56"/>
+                                <state key="normal" title="Sign in with Facebook" image="fb_login"/>
+                                <connections>
+                                    <action selector="signIn:" destination="e9V-yt-wi6" eventType="touchUpInside" id="MNg-2F-Da4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="mapIdentifier" id="Do6-xb-96j"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="signIn" action="showDetailViewController:sender:" id="Do6-xb-96j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nDT-ke-mG1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-581.25" y="-226.05633802816899"/>
+            <point key="canvasLocation" x="-581.5" y="-226.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Map Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="moments" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapController" id="BYZ-38-t0r" customClass="MapController" customModule="moments" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6K7-rb-XAx"/>
                         <viewControllerLayoutGuide type="bottom" id="nn8-D8-tqD"/>
@@ -54,30 +49,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="daW-g0-znu">
-                                <rect key="frame" x="0.0" y="28" width="375" height="568"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="daW-g0-znu">
+                                <rect key="frame" x="0.0" y="28" width="375" height="639"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsK-Ol-Re6">
-                                <rect key="frame" x="103" y="612" width="168" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="crj-h3-2vh"/>
-                                </constraints>
-                                <state key="normal" title="Create A Moment"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJ6-ID-hfC">
+                                <rect key="frame" x="323" y="615" width="32" height="32"/>
+                                <state key="normal" title="Button" image="compass"/>
+                                <connections>
+                                    <action selector="focusMapOnUser" destination="BYZ-38-t0r" eventType="touchUpInside" id="xcx-61-hah"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsK-Ol-Re6">
+                                <rect key="frame" x="103" y="615" width="168" height="32"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Create A Moment">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="kzz-yk-NdL" kind="show" id="PAs-i1-ZVk"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="daW-g0-znu" secondAttribute="trailing" id="1FF-QV-0dP"/>
-                            <constraint firstItem="rsK-Ol-Re6" firstAttribute="top" secondItem="6K7-rb-XAx" secondAttribute="bottom" constant="592" id="5jO-Il-pdA"/>
-                            <constraint firstItem="daW-g0-znu" firstAttribute="bottom" secondItem="nn8-D8-tqD" secondAttribute="top" id="DZM-VP-cj4"/>
-                            <constraint firstItem="daW-g0-znu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Mfd-sc-aaE"/>
-                            <constraint firstAttribute="bottom" secondItem="rsK-Ol-Re6" secondAttribute="bottom" constant="20" symbolic="YES" id="cAL-5b-9dX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rsK-Ol-Re6" secondAttribute="trailing" constant="4" id="fMH-Mn-Euh"/>
-                            <constraint firstItem="daW-g0-znu" firstAttribute="top" secondItem="6K7-rb-XAx" secondAttribute="bottom" constant="8" symbolic="YES" id="vLj-Ku-kV9"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pS0-ya-iPL"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -126,7 +119,6 @@
                                 <state key="normal" title="Create Moment"/>
                                 <connections>
                                     <action selector="createMoment:" destination="kzz-yk-NdL" eventType="touchUpInside" id="aKd-MH-yFA"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="submitMoment" id="1Zi-mv-fvS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -145,9 +137,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="compass" width="512" height="512"/>
         <image name="fb_login" width="580" height="124"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="1Zi-mv-fvS"/>
-    </inferredMetricsTieBreakers>
 </document>

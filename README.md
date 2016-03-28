@@ -11,18 +11,6 @@
 ## User Stories
 ```
 As a user,
-So that I can see activity in my area,
-I want to be able to see Moments within a 1-mile radius.
-```
-
-```
-As a user,
-So that I can return to my local area,
-I want to be able to recenter the map on my current location.
-```
-
-```
-As a user,
 So that I can access the app,
 I need to be able to sign in via Facebook.
 ```
@@ -78,6 +66,16 @@ I want to see a map.
 ```
 ```
 As a user,
+So that I can see activity in my area,
+I want to be able to see Moments within a 1-mile radius.
+```
+```
+As a user,
 So that I can see activity in other areas,
 I want to be able to pan and zoom the map.
+```
+```
+As a user,
+So that I can return to my local area,
+I want to be able to recenter the map on my current location.
 ```

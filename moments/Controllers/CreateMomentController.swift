@@ -3,13 +3,13 @@ import Firebase
 import UIKit
 
 class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate {
-  var userLocation: CLLocation!
-  let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
-  private let characterLimit = 30
-  private var selectedMomoji = ""
-  private var userId: String!
   @IBOutlet weak var pickerView: UIPickerView!
   @IBOutlet weak var textField: UITextField!
+  var userCoordinate: CLLocationCoordinate2D!
+  private let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
+  private var userId: String!
+  private var selectedMomoji: String!
+  private let characterLimit = 30
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -34,7 +34,6 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   }
   
   func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
-    
     var myImageView = UIImageView()
     
     switch row {
@@ -60,8 +59,8 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   @IBAction func createMoment(sender: UIButton) {
     let moment = ["momoji": selectedMomoji,
                   "text": textField.text!,
-                  "latitude": self.userLocation.coordinate.latitude,
-                  "longitude": self.userLocation.coordinate.longitude,
+                  "latitude": userCoordinate.latitude,
+                  "longitude": userCoordinate.longitude,
                   "user": self.userId]
     let momentRef = momentsRef.childByAutoId()
     momentRef.setValue(moment)
