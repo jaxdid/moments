@@ -12,6 +12,8 @@
 		1281C5941CA6AEF200BFD18F /* CreateMomentUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5931CA6AEF200BFD18F /* CreateMomentUnitTests.swift */; };
 		1281C5981CA6B00A00BFD18F /* CreateMomentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5971CA6B00A00BFD18F /* CreateMomentController.swift */; };
 		1281C59A1CA6B24D00BFD18F /* ViewControllerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5991CA6B24D00BFD18F /* ViewControllerUnitTests.swift */; };
+		716DCF241CA9665A00B9A651 /* mockFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18A423B1CA95EBF00444D6E /* mockFirebase.swift */; };
+		716DCF251CA9667500B9A651 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18A423D1CA9622500444D6E /* TestingAppDelegate.swift */; };
 		7C1E3787DDC02B4476C88C1E /* Pods_moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8B740496CE114ACD764FFF /* Pods_moments.framework */; };
 		AD0818E1407656E1ADE6563F /* Pods_momentsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F11029ECB8F52936E84157A /* Pods_momentsUITests.framework */; };
 		B55833841CA46D170039E04C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55833831CA46D170039E04C /* SignInViewController.swift */; };
@@ -499,6 +501,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				716DCF251CA9667500B9A651 /* TestingAppDelegate.swift in Sources */,
+				716DCF241CA9665A00B9A651 /* mockFirebase.swift in Sources */,
 				1281C59A1CA6B24D00BFD18F /* ViewControllerUnitTests.swift in Sources */,
 				1281C5941CA6AEF200BFD18F /* CreateMomentUnitTests.swift in Sources */,
 				C18A423A1CA94C5F00444D6E /* FirebaseMockSpec.swift in Sources */,
