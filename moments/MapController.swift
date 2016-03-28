@@ -4,12 +4,31 @@ import MapKit
 import UIKit
 
 class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+  private let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
   @IBOutlet var map: MKMapView!
   var userCoordinate: CLLocationCoordinate2D!
+  var z: String!
   internal var locationManager: OneShotLocationManager?
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    momentsRef.observeAuthEventWithBlock { authData in
+        self.z = authData.providerData["displayName"]
+    }
+    momentsRef.observeEventType(.ChildAdded, withBlock: { snapshot
+        in
+        let moment = MKPointAnnotation()
+        let a = snapshot.value.objectForKey("latitude")
+        let b = snapshot.value.objectForKey("longitude")
+        let latitude: CLLocationDegrees = (a as? Double)!
+        let longitude: CLLocationDegrees = (b as? Double)!
+        let location: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+        moment.coordinate = location
+        let c = snapshot.value.objectForKey("text")
+        moment.title = c as? String
+        moment.subtitle = self.z as? String
+        self.map.addAnnotation(moment)
+    })
     self.focusMapOnUser()
   }
   
