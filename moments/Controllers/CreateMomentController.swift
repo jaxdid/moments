@@ -18,6 +18,7 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
     momentsRef.observeAuthEventWithBlock { authData in
       self.userId = authData.uid
     }
+    self.hideKeyboardWhenTappedAround()
   }
   
   func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
