@@ -5,8 +5,15 @@ import CoreLocation
 
 class ViewControllerUnitTests: XCTestCase {
     
+    var viewController: ViewController!
+    
     override func setUp() {
         super.setUp()
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        viewController = storyboard.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
+        UIApplication.sharedApplication().keyWindow!.rootViewController = viewController
+        
+        let _ = viewController
     }
     
     override func tearDown() {
@@ -14,18 +21,19 @@ class ViewControllerUnitTests: XCTestCase {
     }
     
     func testValuePassedOnSegue() {
-        let controller = ViewController()
-        controller.userLocation = CLLocation(latitude: 12, longitude: 14)
+        viewController.userLocation = CLLocation(latitude: 12, longitude: 14)
         let destinationController = CreateMomentController()
-        let segue = UIStoryboardSegue(identifier: "sa",
-                                      source: controller,
+        let segue = UIStoryboardSegue(identifier: "Location",
+                                      source: viewController,
                                       destination: destinationController)
-        controller.prepareForSegue(segue, sender: nil)
+        viewController.prepareForSegue(segue, sender: nil)
 
         if let location:Optional = destinationController.userLocation {
-            XCTAssertEqual(controller.userLocation, location)
+            XCTAssertEqual(viewController.userLocation, location)
         } else {
             XCTFail("Arguments should be passed")
         }
     }
+    
+
 }

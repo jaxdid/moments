@@ -25,10 +25,4 @@ class CreateMomentUnitTests: XCTestCase {
     override func tearDown() {
         super.tearDown()
     }
-
-    func testControllerHasAccessToCoordinates() {
-//        XCTAssertTrue(createMomentController.latitude)
-//        XCTAssertTrue(createMomentController.longitude)
-    }
-
 }
