@@ -1,10 +1,9 @@
-import UIKit
-import Firebase
 import FBSDKCoreKit
 import FBSDKLoginKit
+import Firebase
+import UIKit
 
-class SignInViewController: UIViewController {
-  
+class SignInController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
   }
@@ -13,7 +12,7 @@ class SignInViewController: UIViewController {
     super.didReceiveMemoryWarning()
   }
   
-  @IBAction func SignIn(sender: UIButton) {
+  @IBAction func signIn(sender: UIButton) {
     let ref = Firebase(url: "https://makersmoments.firebaseio.com")
     let facebookLogin = FBSDKLoginManager()
     facebookLogin.logInWithReadPermissions(["email"], handler: {
@@ -28,11 +27,14 @@ class SignInViewController: UIViewController {
           withCompletionBlock: { error, authData in
             if error != nil {
               print("Login failed. \(error)")
-            } else {
+            } else if authData != nil {
               print("Logged in! \(authData)")
-              self.performSegueWithIdentifier("mapIdentifier", sender: self)
+              ref.observeAuthEventWithBlock { (authData) -> Void in
+                self.performSegueWithIdentifier("signIn", sender: nil)
+              }
             }
-        })
+          }
+        )
       }
     })
   }
