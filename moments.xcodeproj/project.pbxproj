@@ -13,16 +13,17 @@
 		1281C59A1CA6B24D00BFD18F /* ViewControllerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5991CA6B24D00BFD18F /* ViewControllerUnitTests.swift */; };
 		7C1E3787DDC02B4476C88C1E /* Pods_moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8B740496CE114ACD764FFF /* Pods_moments.framework */; };
 		AD0818E1407656E1ADE6563F /* Pods_momentsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F11029ECB8F52936E84157A /* Pods_momentsUITests.framework */; };
-		B55833841CA46D170039E04C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55833831CA46D170039E04C /* SignInViewController.swift */; };
+		B55833841CA46D170039E04C /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55833831CA46D170039E04C /* SignInController.swift */; };
 		B558338A1CA472C90039E04C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55833891CA472C90039E04C /* FBSDKCoreKit.framework */; };
 		B558338C1CA474BD0039E04C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B558338B1CA474BD0039E04C /* FBSDKLoginKit.framework */; };
 		EAC3FDA21CA3F24B0083C500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3FDA11CA3F24B0083C500 /* AppDelegate.swift */; };
-		EAC3FDA41CA3F24B0083C500 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3FDA31CA3F24B0083C500 /* ViewController.swift */; };
+		EAC3FDA41CA3F24B0083C500 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3FDA31CA3F24B0083C500 /* MapController.swift */; };
 		EAC3FDA71CA3F24B0083C500 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAC3FDA51CA3F24B0083C500 /* Main.storyboard */; };
 		EAC3FDA91CA3F24B0083C500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAC3FDA81CA3F24B0083C500 /* Assets.xcassets */; };
 		EAC3FDAC1CA3F24B0083C500 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAC3FDAA1CA3F24B0083C500 /* LaunchScreen.storyboard */; };
 		EAC3FDBA1CA3F4470083C500 /* momentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3FDB91CA3F4470083C500 /* momentsUITests.swift */; };
 		EAD58E381CA437C800E85D4C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD58E371CA437C800E85D4C /* CoreLocation.framework */; };
+		EAF439B41CA6B7B5009F014B /* OneShotLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF439B31CA6B7B5009F014B /* OneShotLocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,7 @@
 		718AFA6B434C4DB5B60D66AE /* Pods-momentsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-momentsUITests/Pods-momentsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		80B5C720F8B205219D4BC161 /* Pods-momentsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-momentsTests/Pods-momentsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A7382FDB7B04DB49BE9BA27C /* Pods-moments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moments.release.xcconfig"; path = "Pods/Target Support Files/Pods-moments/Pods-moments.release.xcconfig"; sourceTree = "<group>"; };
-		B55833831CA46D170039E04C /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = ../SignInViewController.swift; sourceTree = "<group>"; };
+		B55833831CA46D170039E04C /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInController.swift; path = ../SignInController.swift; sourceTree = "<group>"; };
 		B55833891CA472C90039E04C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		B558338B1CA474BD0039E04C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		B59A63FD5AE53AFFCDEB9E19 /* Pods-moments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moments/Pods-moments.debug.xcconfig"; sourceTree = "<group>"; };
@@ -60,7 +61,7 @@
 		E7AF4C3A45E3929333F444FC /* Pods-momentsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-momentsTests/Pods-momentsTests.release.xcconfig"; sourceTree = "<group>"; };
 		EAC3FD9E1CA3F24B0083C500 /* moments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC3FDA11CA3F24B0083C500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EAC3FDA31CA3F24B0083C500 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
+		EAC3FDA31CA3F24B0083C500 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapController.swift; path = ../MapController.swift; sourceTree = "<group>"; };
 		EAC3FDA61CA3F24B0083C500 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAC3FDA81CA3F24B0083C500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAC3FDAB1CA3F24B0083C500 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 		EAC3FDC51CA3F4580083C500 /* momentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = momentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC3FDC91CA3F4580083C500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAD58E371CA437C800E85D4C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EAF439B31CA6B7B5009F014B /* OneShotLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OneShotLocationManager.swift; path = ../OneShotLocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +109,8 @@
 		1281C5921CA6AE7800BFD18F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EAC3FDA31CA3F24B0083C500 /* ViewController.swift */,
-				B55833831CA46D170039E04C /* SignInViewController.swift */,
+				EAC3FDA31CA3F24B0083C500 /* MapController.swift */,
+				B55833831CA46D170039E04C /* SignInController.swift */,
 				1281C5971CA6B00A00BFD18F /* CreateMomentController.swift */,
 			);
 			path = Controllers;
@@ -165,6 +167,7 @@
 		EAC3FDA01CA3F24B0083C500 /* moments */ = {
 			isa = PBXGroup;
 			children = (
+				EAF439B31CA6B7B5009F014B /* OneShotLocationManager.swift */,
 				1281C5921CA6AE7800BFD18F /* Controllers */,
 				EAC3FDA11CA3F24B0083C500 /* AppDelegate.swift */,
 				EAC3FDA51CA3F24B0083C500 /* Main.storyboard */,
@@ -457,10 +460,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAC3FDA41CA3F24B0083C500 /* ViewController.swift in Sources */,
+				EAC3FDA41CA3F24B0083C500 /* MapController.swift in Sources */,
 				EAC3FDA21CA3F24B0083C500 /* AppDelegate.swift in Sources */,
-				B55833841CA46D170039E04C /* SignInViewController.swift in Sources */,
+				B55833841CA46D170039E04C /* SignInController.swift in Sources */,
 				1281C5981CA6B00A00BFD18F /* CreateMomentController.swift in Sources */,
+				EAF439B41CA6B7B5009F014B /* OneShotLocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
