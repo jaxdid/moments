@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Sign In Controller-->
@@ -119,6 +118,7 @@
                                 <state key="normal" title="Create Moment"/>
                                 <connections>
                                     <action selector="createMoment:" destination="kzz-yk-NdL" eventType="touchUpInside" id="aKd-MH-yFA"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="snN-rN-KU8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -140,4 +140,7 @@
         <image name="compass" width="512" height="512"/>
         <image name="fb_login" width="580" height="124"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="snN-rN-KU8"/>
+    </inferredMetricsTieBreakers>
 </document>
