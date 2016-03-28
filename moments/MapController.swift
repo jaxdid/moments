@@ -15,22 +15,16 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
     momentsRef.observeAuthEventWithBlock { authData in
       self.userName = authData.providerData["displayName"] as? String
     }
-    momentsRef.observeEventType(.ChildAdded, withBlock: { snapshot
-      in
+    momentsRef.observeEventType(.ChildAdded, withBlock: { snapshot in
       let moment = MKPointAnnotation()
-      let a = snapshot.value.objectForKey("latitude")
-      let b = snapshot.value.objectForKey("longitude")
-      let latitude: CLLocationDegrees = (a as? Double)!
-      let longitude: CLLocationDegrees = (b as? Double)!
-      let location: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
-      moment.coordinate = location
-      let c = snapshot.value.objectForKey("text")
+      let latitude = snapshot.value.objectForKey("latitude") as! Double
+      let longitude = snapshot.value.objectForKey("longitude") as! Double
+      let text = snapshot.value.objectForKey("text") as! String
       let momoji = snapshot.value.objectForKey("momoji") as! String
-      let cut = momoji.substringWithRange(Range<String.Index>(start: momoji.startIndex.advancedBy(2), end: momoji.endIndex.advancedBy(0)))
-      print(cut)
-      let scalar = String(Character(UnicodeScalar(Int(cut, radix: 16)!)))
-      moment.title = "\(scalar)"
+      let scalar = String(Character(UnicodeScalar(Int(momoji, radix: 16)!)))
+      moment.title = "\(text) \(scalar)"
       moment.subtitle = self.userName
+      moment.coordinate = CLLocationCoordinate2DMake(latitude, longitude)
       self.map.addAnnotation(moment)
     })
     self.focusMapOnUser()

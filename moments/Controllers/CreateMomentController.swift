@@ -39,10 +39,10 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
     switch row {
     case 0:
       myImageView = UIImageView(image: UIImage(named:"grinning_face"))
-      selectedMomoji = "U+1F600"
+      selectedMomoji = "1F600"
     case 1:
       myImageView = UIImageView(image: UIImage(named:"joy"))
-      selectedMomoji = "U+1F602"
+      selectedMomoji = "1F602"
     default:
       myImageView.image = nil
     }
