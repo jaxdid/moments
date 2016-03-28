@@ -118,7 +118,6 @@
                                 <state key="normal" title="Create Moment"/>
                                 <connections>
                                     <action selector="createMoment:" destination="kzz-yk-NdL" eventType="touchUpInside" id="aKd-MH-yFA"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="submitMoment" id="1Zi-mv-fvS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -140,7 +139,4 @@
         <image name="compass" width="512" height="512"/>
         <image name="fb_login" width="580" height="124"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Do6-xb-96j"/>
-    </inferredMetricsTieBreakers>
 </document>
