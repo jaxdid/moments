@@ -17,6 +17,9 @@
 		B55833841CA46D170039E04C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55833831CA46D170039E04C /* SignInViewController.swift */; };
 		B558338A1CA472C90039E04C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55833891CA472C90039E04C /* FBSDKCoreKit.framework */; };
 		B558338C1CA474BD0039E04C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B558338B1CA474BD0039E04C /* FBSDKLoginKit.framework */; };
+		C18A423A1CA94C5F00444D6E /* FirebaseMockSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18A42391CA94C5F00444D6E /* FirebaseMockSpec.swift */; };
+		C18A423C1CA95EBF00444D6E /* mockFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18A423B1CA95EBF00444D6E /* mockFirebase.swift */; };
+		C18A423E1CA9622500444D6E /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18A423D1CA9622500444D6E /* TestingAppDelegate.swift */; };
 		EAC3FDA21CA3F24B0083C500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3FDA11CA3F24B0083C500 /* AppDelegate.swift */; };
 		EAC3FDA41CA3F24B0083C500 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3FDA31CA3F24B0083C500 /* ViewController.swift */; };
 		EAC3FDA71CA3F24B0083C500 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAC3FDA51CA3F24B0083C500 /* Main.storyboard */; };
@@ -58,6 +61,9 @@
 		B55833891CA472C90039E04C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		B558338B1CA474BD0039E04C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		B59A63FD5AE53AFFCDEB9E19 /* Pods-moments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moments/Pods-moments.debug.xcconfig"; sourceTree = "<group>"; };
+		C18A42391CA94C5F00444D6E /* FirebaseMockSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseMockSpec.swift; sourceTree = "<group>"; };
+		C18A423B1CA95EBF00444D6E /* mockFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mockFirebase.swift; sourceTree = "<group>"; };
+		C18A423D1CA9622500444D6E /* TestingAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
 		CD8B740496CE114ACD764FFF /* Pods_moments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7AF4C3A45E3929333F444FC /* Pods-momentsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-momentsTests/Pods-momentsTests.release.xcconfig"; sourceTree = "<group>"; };
 		EAC3FD9E1CA3F24B0083C500 /* moments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moments.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +188,8 @@
 				EAC3FDA81CA3F24B0083C500 /* Assets.xcassets */,
 				EAC3FDAA1CA3F24B0083C500 /* LaunchScreen.storyboard */,
 				EAC3FDAD1CA3F24B0083C500 /* Info.plist */,
+				C18A423B1CA95EBF00444D6E /* mockFirebase.swift */,
+				C18A423D1CA9622500444D6E /* TestingAppDelegate.swift */,
 			);
 			path = moments;
 			sourceTree = "<group>";
@@ -201,6 +209,7 @@
 				EAC3FDC91CA3F4580083C500 /* Info.plist */,
 				1281C5931CA6AEF200BFD18F /* CreateMomentUnitTests.swift */,
 				1281C5991CA6B24D00BFD18F /* ViewControllerUnitTests.swift */,
+				C18A42391CA94C5F00444D6E /* FirebaseMockSpec.swift */,
 			);
 			path = momentsTests;
 			sourceTree = "<group>";
@@ -468,6 +477,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C18A423E1CA9622500444D6E /* TestingAppDelegate.swift in Sources */,
+				C18A423C1CA95EBF00444D6E /* mockFirebase.swift in Sources */,
 				EAC3FDA41CA3F24B0083C500 /* ViewController.swift in Sources */,
 				122876DC1CA91D890022783E /* touchHelper.swift in Sources */,
 				EAC3FDA21CA3F24B0083C500 /* AppDelegate.swift in Sources */,
@@ -490,6 +501,7 @@
 			files = (
 				1281C59A1CA6B24D00BFD18F /* ViewControllerUnitTests.swift in Sources */,
 				1281C5941CA6AEF200BFD18F /* CreateMomentUnitTests.swift in Sources */,
+				C18A423A1CA94C5F00444D6E /* FirebaseMockSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
