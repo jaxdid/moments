@@ -15,13 +15,13 @@
 		12B7619A1CAA6C3E0044067E /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B761991CAA6C3E0044067E /* MapAnnotation.swift */; };
 		12B761A31CAA7EAD0044067E /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B761991CAA6C3E0044067E /* MapAnnotation.swift */; };
 		12B761A51CAA7EC40044067E /* MapAnnotationUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B761A41CAA7EC40044067E /* MapAnnotationUnitTests.swift */; };
-		12B761A71CAAA8570044067E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B761A61CAAA8570044067E /* MapView.swift */; };
 		716DCF241CA9665A00B9A651 /* mockFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18A423B1CA95EBF00444D6E /* mockFirebase.swift */; };
 		7C1E3787DDC02B4476C88C1E /* Pods_moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8B740496CE114ACD764FFF /* Pods_moments.framework */; };
 		AD0818E1407656E1ADE6563F /* Pods_momentsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F11029ECB8F52936E84157A /* Pods_momentsUITests.framework */; };
 		B55833841CA46D170039E04C /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55833831CA46D170039E04C /* SignInController.swift */; };
 		B558338A1CA472C90039E04C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55833891CA472C90039E04C /* FBSDKCoreKit.framework */; };
 		B558338C1CA474BD0039E04C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B558338B1CA474BD0039E04C /* FBSDKLoginKit.framework */; };
+		C1167CC51CAAD0D500A2961F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1167CC41CAAD0D500A2961F /* MapView.swift */; };
 		C18A423A1CA94C5F00444D6E /* FirebaseMockSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18A42391CA94C5F00444D6E /* FirebaseMockSpec.swift */; };
 		C18A423C1CA95EBF00444D6E /* mockFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18A423B1CA95EBF00444D6E /* mockFirebase.swift */; };
 		EAC3FDA21CA3F24B0083C500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3FDA11CA3F24B0083C500 /* AppDelegate.swift */; };
@@ -58,7 +58,6 @@
 		1281C5991CA6B24D00BFD18F /* MapControllerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapControllerUnitTests.swift; sourceTree = "<group>"; };
 		12B761991CAA6C3E0044067E /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapAnnotation.swift; path = moments/Models/MapAnnotation.swift; sourceTree = SOURCE_ROOT; };
 		12B761A41CAA7EC40044067E /* MapAnnotationUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotationUnitTests.swift; sourceTree = "<group>"; };
-		12B761A61CAAA8570044067E /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapView.swift; path = ../MapView.swift; sourceTree = "<group>"; };
 		268328640982210A522001E5 /* Pods-momentsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-momentsUITests/Pods-momentsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3F11029ECB8F52936E84157A /* Pods_momentsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_momentsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B862552013E70AEF9FA7EF /* Pods_momentsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_momentsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +68,7 @@
 		B55833891CA472C90039E04C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		B558338B1CA474BD0039E04C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		B59A63FD5AE53AFFCDEB9E19 /* Pods-moments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moments/Pods-moments.debug.xcconfig"; sourceTree = "<group>"; };
+		C1167CC41CAAD0D500A2961F /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapView.swift; path = moments/MapView.swift; sourceTree = SOURCE_ROOT; };
 		C18A42391CA94C5F00444D6E /* FirebaseMockSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseMockSpec.swift; sourceTree = "<group>"; };
 		C18A423B1CA95EBF00444D6E /* mockFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mockFirebase.swift; sourceTree = "<group>"; };
 		CD8B740496CE114ACD764FFF /* Pods_moments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,7 +149,7 @@
 		12B761A81CAAA85C0044067E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				12B761A61CAAA8570044067E /* MapView.swift */,
+				C1167CC41CAAD0D500A2961F /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -511,7 +511,7 @@
 				B55833841CA46D170039E04C /* SignInController.swift in Sources */,
 				1281C5981CA6B00A00BFD18F /* CreateMomentController.swift in Sources */,
 				EAF439B41CA6B7B5009F014B /* OneShotLocationManager.swift in Sources */,
-				12B761A71CAAA8570044067E /* MapView.swift in Sources */,
+				C1167CC51CAAD0D500A2961F /* MapView.swift in Sources */,
 				12B7619A1CAA6C3E0044067E /* MapAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
