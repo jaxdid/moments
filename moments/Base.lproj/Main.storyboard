@@ -67,7 +67,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="617"/>
                                 <color key="tintColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJ6-ID-hfC">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJ6-ID-hfC">
                                 <rect key="frame" x="323" y="615" width="32" height="32"/>
                                 <state key="normal" title="Button" image="compass"/>
                                 <connections>
@@ -93,8 +93,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="nn8-D8-tqD" firstAttribute="top" secondItem="rsK-Ol-Re6" secondAttribute="bottom" constant="20" id="FGP-Oa-9Wk"/>
                             <constraint firstAttribute="bottomMargin" secondItem="daW-g0-znu" secondAttribute="bottom" constant="-14" id="esk-xV-uXd"/>
-                            <constraint firstItem="nn8-D8-tqD" firstAttribute="top" secondItem="rsK-Ol-Re6" secondAttribute="bottom" constant="20" id="hBw-YT-ixu"/>
+                            <constraint firstItem="nn8-D8-tqD" firstAttribute="top" secondItem="gJ6-ID-hfC" secondAttribute="bottom" constant="20" id="ovg-Yl-9Kc"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
