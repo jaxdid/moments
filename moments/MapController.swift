@@ -12,15 +12,14 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
   override func viewDidLoad() {
     super.viewDidLoad()
     momentsRef.observeEventType(.ChildAdded, withBlock: { snapshot in
-      let moment = MKPointAnnotation()
       let latitude = snapshot.value.objectForKey("latitude") as! Double
       let longitude = snapshot.value.objectForKey("longitude") as! Double
       let text = snapshot.value.objectForKey("text") as! String
       let momoji = snapshot.value.objectForKey("momoji") as! String
       let scalar = String(Character(UnicodeScalar(Int(momoji, radix: 16)!)))
-      moment.title = "\(text) \(scalar)"
-      moment.subtitle = snapshot.value.objectForKey("userName") as? String
-      moment.coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+      let moment = MapAnnotation(title: "\(text)",
+                                 subtitle: snapshot.value.objectForKey("userName") as! String,
+                                 coordinate: CLLocationCoordinate2DMake(latitude, longitude))
       self.map.addAnnotation(moment)
     })
     self.focusMapOnUser()

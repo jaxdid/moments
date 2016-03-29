@@ -12,6 +12,7 @@
 		1281C5941CA6AEF200BFD18F /* CreateMomentUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5931CA6AEF200BFD18F /* CreateMomentUnitTests.swift */; };
 		1281C5981CA6B00A00BFD18F /* CreateMomentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5971CA6B00A00BFD18F /* CreateMomentController.swift */; };
 		1281C59A1CA6B24D00BFD18F /* MapControllerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5991CA6B24D00BFD18F /* MapControllerUnitTests.swift */; };
+		12B7619A1CAA6C3E0044067E /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B761991CAA6C3E0044067E /* MapAnnotation.swift */; };
 		716DCF241CA9665A00B9A651 /* mockFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18A423B1CA95EBF00444D6E /* mockFirebase.swift */; };
 		7C1E3787DDC02B4476C88C1E /* Pods_moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8B740496CE114ACD764FFF /* Pods_moments.framework */; };
 		AD0818E1407656E1ADE6563F /* Pods_momentsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F11029ECB8F52936E84157A /* Pods_momentsUITests.framework */; };
@@ -52,6 +53,7 @@
 		1281C5931CA6AEF200BFD18F /* CreateMomentUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMomentUnitTests.swift; sourceTree = "<group>"; };
 		1281C5971CA6B00A00BFD18F /* CreateMomentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateMomentController.swift; path = moments/Controllers/CreateMomentController.swift; sourceTree = SOURCE_ROOT; };
 		1281C5991CA6B24D00BFD18F /* MapControllerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapControllerUnitTests.swift; sourceTree = "<group>"; };
+		12B761991CAA6C3E0044067E /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapAnnotation.swift; path = moments/Models/MapAnnotation.swift; sourceTree = SOURCE_ROOT; };
 		268328640982210A522001E5 /* Pods-momentsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-momentsUITests/Pods-momentsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3F11029ECB8F52936E84157A /* Pods_momentsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_momentsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B862552013E70AEF9FA7EF /* Pods_momentsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_momentsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +133,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		12B761981CAA6BFF0044067E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				12B761991CAA6C3E0044067E /* MapAnnotation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C12DC210C6995AA8A42D2EB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +192,7 @@
 		EAC3FDA01CA3F24B0083C500 /* moments */ = {
 			isa = PBXGroup;
 			children = (
+				12B761981CAA6BFF0044067E /* Models */,
 				122876DA1CA91D5B0022783E /* Helpers */,
 				EAF439B31CA6B7B5009F014B /* OneShotLocationManager.swift */,
 				1281C5921CA6AE7800BFD18F /* Controllers */,
@@ -485,6 +496,7 @@
 				B55833841CA46D170039E04C /* SignInController.swift in Sources */,
 				1281C5981CA6B00A00BFD18F /* CreateMomentController.swift in Sources */,
 				EAF439B41CA6B7B5009F014B /* OneShotLocationManager.swift in Sources */,
+				12B7619A1CAA6C3E0044067E /* MapAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
