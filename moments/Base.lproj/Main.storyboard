@@ -64,10 +64,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" layoutMarginsFollowReadableWidth="YES" mapType="standard" showsUserLocation="YES" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daW-g0-znu">
-                                <rect key="frame" x="0.0" y="64" width="375" height="617"/>
+                                <rect key="frame" x="0.0" y="364" width="346" height="148"/>
                                 <color key="tintColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJ6-ID-hfC">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJ6-ID-hfC">
                                 <rect key="frame" x="323" y="615" width="32" height="32"/>
                                 <state key="normal" title="Button" image="compass"/>
                                 <connections>
@@ -90,17 +90,20 @@
                                     <segue destination="kzz-yk-NdL" kind="show" id="PAs-i1-ZVk"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OQp-iF-1sQ">
+                                <rect key="frame" x="67" y="99" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nn8-D8-tqD" firstAttribute="top" secondItem="rsK-Ol-Re6" secondAttribute="bottom" constant="20" id="FGP-Oa-9Wk"/>
                             <constraint firstAttribute="bottomMargin" secondItem="daW-g0-znu" secondAttribute="bottom" constant="-14" id="esk-xV-uXd"/>
-                            <constraint firstItem="nn8-D8-tqD" firstAttribute="top" secondItem="gJ6-ID-hfC" secondAttribute="bottom" constant="20" id="ovg-Yl-9Kc"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="imageVIew" destination="OQp-iF-1sQ" id="CGb-gJ-gge"/>
                         <outlet property="map" destination="daW-g0-znu" id="9la-iK-R3E"/>
                     </connections>
                 </viewController>
@@ -186,6 +189,6 @@
         <image name="fb_login" width="580" height="124"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="snN-rN-KU8"/>
+        <segue reference="ipg-dQ-eql"/>
     </inferredMetricsTieBreakers>
 </document>

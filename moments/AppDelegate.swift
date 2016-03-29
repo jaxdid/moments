@@ -30,9 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     if let path = NSBundle.mainBundle().pathForResource("Keys", ofType: "plist") {
         keys = NSDictionary(contentsOfFile: path)
     }
-    
     let credentialsProvider = AWSCognitoCredentialsProvider(
-        regionType: AWSRegionType.EUWest1, identityPoolId: keys?["parseCognitoId"] as? String)
+        regionType: AWSRegionType.EUWest1, identityPoolId: "eu-west-1:62c2ee3e-db6d-4210-8706-e9895676885a")
     
     let defaultServiceConfiguration = AWSServiceConfiguration(
         region: AWSRegionType.EUWest1, credentialsProvider: credentialsProvider)

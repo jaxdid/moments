@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A2394520622BCFFCEAA17524'
-               BlueprintName = 'Pods-momentsUITests'
+               BlueprintIdentifier = 'C778CFBAD7BBD4623C42280F'
+               BlueprintName = 'AWSCore'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods_momentsUITests.framework'>
+               BuildableName = 'AWSCore.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
