@@ -32,7 +32,7 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   }
   
   func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-    return 70
+    return 40
   }
   
   func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
