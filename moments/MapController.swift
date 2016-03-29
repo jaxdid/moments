@@ -4,7 +4,7 @@ import MapKit
 import UIKit
 
 class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-  private let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
+  private let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments-12")
   @IBOutlet var map: MKMapView!
   var userCoordinate: CLLocationCoordinate2D!
   internal var locationManager: OneShotLocationManager?
@@ -17,10 +17,17 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
       let longitude = snapshot.value.objectForKey("longitude") as! Double
       let text = snapshot.value.objectForKey("text") as! String
       let momoji = snapshot.value.objectForKey("momoji") as! String
-      let moment = MapAnnotation(title: "\(text)",
-                                 subtitle: snapshot.value.objectForKey("userName") as! String,
+      let momentId = snapshot.key
+      let timestamp = snapshot.value.objectForKey("timestamp") as! String
+      let uid = snapshot.value.objectForKey("userId") as! String
+      let userName = snapshot.value.objectForKey("userName") as! String
+      let moment = MapAnnotation(momentId: momentId,
+                                 title: "\(text)",
+                                 subtitle: "\(timestamp) by \(userName)",
                                  coordinate: CLLocationCoordinate2DMake(latitude, longitude),
-                                 momoji: momoji)
+                                 momoji: momoji,
+                                 timestamp: timestamp,
+                                 uid: uid)
       self.map.addAnnotation(moment)
     })
 

@@ -6,7 +6,7 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   @IBOutlet weak var pickerView: UIPickerView!
   @IBOutlet weak var textField: UITextField!
   var userCoordinate: CLLocationCoordinate2D!
-  private let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
+  private let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments-12")
   private var userId: String!
   private var userName: String!
   private var selectedMomoji: String!
@@ -59,12 +59,17 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   }
   
   @IBAction func createMoment(sender: UIButton) {
+    let timestampFormatter = NSDateFormatter()
+    timestampFormatter.dateStyle = .LongStyle
+    timestampFormatter.timeStyle = .MediumStyle
+    
     let moment = ["momoji": selectedMomoji,
                   "text": textField.text!,
                   "latitude": userCoordinate.latitude,
                   "longitude": userCoordinate.longitude,
                   "userName": self.userName,
-                  "userId": self.userId]
+                  "userId": self.userId,
+                  "timestamp": timestampFormatter.stringFromDate(NSDate())]
     let momentRef = momentsRef.childByAutoId()
     momentRef.setValue(moment)
   }
