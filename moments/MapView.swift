@@ -1,4 +1,3 @@
-import Foundation
 import UIKit
 import MapKit
 
@@ -26,8 +25,6 @@ extension MapController {
             annotationView?.canShowCallout = true
         }
         else {
-            
-            //we are re-using a view, update its annotation reference...
             annotationView?.annotation = annotation
         }
         
