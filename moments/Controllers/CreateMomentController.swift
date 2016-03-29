@@ -8,6 +8,7 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   var userCoordinate: CLLocationCoordinate2D!
   private let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
   private var userId: String!
+  private var userName: String!
   private var selectedMomoji: String!
   private let characterLimit = 30
   
@@ -17,6 +18,7 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
     textField.delegate = self
     momentsRef.observeAuthEventWithBlock { authData in
       self.userId = authData.uid
+      self.userName = authData.providerData["displayName"] as? String
     }
     self.hideKeyboardWhenTappedAround()
   }
@@ -39,10 +41,10 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
     switch row {
     case 0:
       myImageView = UIImageView(image: UIImage(named:"grinning_face"))
-      selectedMomoji = "U+1F600"
+      selectedMomoji = "1F600"
     case 1:
       myImageView = UIImageView(image: UIImage(named:"joy"))
-      selectedMomoji = "U+1F602"
+      selectedMomoji = "1F602"
     default:
       myImageView.image = nil
     }
@@ -61,7 +63,8 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
                   "text": textField.text!,
                   "latitude": userCoordinate.latitude,
                   "longitude": userCoordinate.longitude,
-                  "user": self.userId]
+                  "userName": self.userName,
+                  "userId": self.userId]
     let momentRef = momentsRef.childByAutoId()
     momentRef.setValue(moment)
   }
