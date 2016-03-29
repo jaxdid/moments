@@ -17,8 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qv-B6-lFs">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qv-B6-lFs">
                                 <rect key="frame" x="59" y="306" width="256" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="Iov-gy-H0p"/>
+                                    <constraint firstAttribute="width" constant="256" id="pq5-69-eHN"/>
+                                </constraints>
                                 <state key="normal" title="Sign in with Facebook" image="fb_login"/>
                                 <connections>
                                     <action selector="signIn:" destination="e9V-yt-wi6" eventType="touchUpInside" id="MNg-2F-Da4"/>
@@ -26,6 +30,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4qv-B6-lFs" firstAttribute="centerX" secondItem="YoR-tc-faO" secondAttribute="centerX" id="E0k-Al-cX4"/>
+                            <constraint firstItem="4qv-B6-lFs" firstAttribute="centerY" secondItem="YoR-tc-faO" secondAttribute="centerY" id="NOv-Jb-tdN"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -48,9 +56,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="daW-g0-znu">
-                                <rect key="frame" x="0.0" y="28" width="375" height="639"/>
-                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJ6-ID-hfC">
                                 <rect key="frame" x="323" y="615" width="32" height="32"/>
                                 <state key="normal" title="Button" image="compass"/>
@@ -68,11 +73,16 @@
                                     <segue destination="kzz-yk-NdL" kind="show" id="PAs-i1-ZVk"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" mapType="standard" showsUserLocation="YES" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daW-g0-znu">
+                                <rect key="frame" x="0.0" y="14" width="375" height="653"/>
+                                <color key="tintColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="pS0-ya-iPL"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="map" destination="daW-g0-znu" id="9la-iK-R3E"/>
                     </connections>
@@ -141,6 +151,6 @@
         <image name="fb_login" width="580" height="124"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="snN-rN-KU8"/>
+        <segue reference="Do6-xb-96j"/>
     </inferredMetricsTieBreakers>
 </document>
