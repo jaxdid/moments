@@ -7,14 +7,10 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
   private let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
   @IBOutlet var map: MKMapView!
   var userCoordinate: CLLocationCoordinate2D!
-  var userName: String!
   internal var locationManager: OneShotLocationManager?
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    momentsRef.observeAuthEventWithBlock { authData in
-      self.userName = authData.providerData["displayName"] as? String
-    }
     momentsRef.observeEventType(.ChildAdded, withBlock: { snapshot in
       let moment = MKPointAnnotation()
       let latitude = snapshot.value.objectForKey("latitude") as! Double
@@ -23,7 +19,7 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
       let momoji = snapshot.value.objectForKey("momoji") as! String
       let scalar = String(Character(UnicodeScalar(Int(momoji, radix: 16)!)))
       moment.title = "\(text) \(scalar)"
-      moment.subtitle = self.userName
+      moment.subtitle = snapshot.value.objectForKey("userName") as? String
       moment.coordinate = CLLocationCoordinate2DMake(latitude, longitude)
       self.map.addAnnotation(moment)
     })
