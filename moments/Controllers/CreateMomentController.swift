@@ -2,7 +2,8 @@ import CoreLocation
 import Firebase
 import UIKit
 
-class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate {
+class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
   @IBOutlet weak var pickerView: UIPickerView!
   @IBOutlet weak var textField: UITextField!
   var userCoordinate: CLLocationCoordinate2D!
@@ -11,11 +12,13 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   private var userName: String!
   private var selectedMomoji: String!
   private let characterLimit = 30
+  private let imagePicker = UIImagePickerController()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     pickerView.delegate = self
     textField.delegate = self
+    imagePicker.delegate = self
     momentsRef.observeAuthEventWithBlock { authData in
       self.userId = authData.uid
       self.userName = authData.providerData["displayName"] as? String
@@ -68,4 +71,21 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
     let momentRef = momentsRef.childByAutoId()
     momentRef.setValue(moment)
   }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        }
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+    }
+
+    @IBAction func takePhoto(sender: AnyObject) {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+        imagePicker.cameraCaptureMode = .Photo
+        imagePicker.modalPresentationStyle =  .FullScreen
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
 }
