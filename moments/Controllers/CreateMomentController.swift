@@ -1,6 +1,9 @@
 import CoreLocation
 import Firebase
 import UIKit
+import AWSCore
+import AWSS3
+import AWSCognito
 
 class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -13,6 +16,7 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   private var selectedMomoji: String!
   private let characterLimit = 30
   private let imagePicker = UIImagePickerController()
+  private let s3bucket = "makersmoments"
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -73,8 +77,17 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-        }
+        
+    
+        let pickedImage = info[UIImagePickerControllerOriginalImage] as? String!
+        print(pickedImage)
+//        let uploadRequest = AWSS3TransferManagerUploadRequest()
+//        uploadRequest.body = Picked
+//        uploadRequest.key = NSProcessInfo.processInfo().globallyUniqueString + "." + ext
+//        uploadRequest.bucket = s3bucket
+//        uploadRequest.contentType = "image/" + ext
+        
+            
         dismissViewControllerAnimated(true, completion: nil)
     }
     

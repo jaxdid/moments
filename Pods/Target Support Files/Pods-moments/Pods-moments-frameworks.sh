@@ -84,8 +84,14 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-moments/AWSCognito.framework"
+  install_framework "Pods-moments/AWSCore.framework"
+  install_framework "Pods-moments/AWSS3.framework"
   install_framework "Pods-moments/Firebase.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-moments/AWSCognito.framework"
+  install_framework "Pods-moments/AWSCore.framework"
+  install_framework "Pods-moments/AWSS3.framework"
   install_framework "Pods-moments/Firebase.framework"
 fi

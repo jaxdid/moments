@@ -1,11 +1,13 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import AWSCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
+    var keys: NSDictionary?
   
   func applicationWillResignActive(application: UIApplication) {
     
@@ -24,6 +26,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    
+    if let path = NSBundle.mainBundle().pathForResource("Keys", ofType: "plist") {
+        keys = NSDictionary(contentsOfFile: path)
+    }
+    
+    let credentialsProvider = AWSCognitoCredentialsProvider(
+        regionType: AWSRegionType.EUWest1, identityPoolId: keys?["parseCognitoId"] as? String)
+    
+    let defaultServiceConfiguration = AWSServiceConfiguration(
+        region: AWSRegionType.EUWest1, credentialsProvider: credentialsProvider)
+    
+    AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = defaultServiceConfiguration
+    
     return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
   }
   

@@ -1,14 +1,25 @@
 PODS:
+  - AWSCognito (2.3.6):
+    - AWSCore (= 2.3.6)
+  - AWSCore (2.3.6)
+  - AWSS3 (2.3.6):
+    - AWSCore (= 2.3.6)
   - Firebase (2.5.1)
   - Nimble (3.2.0)
   - Quick (0.9.1)
 
 DEPENDENCIES:
+  - AWSCognito
+  - AWSCore
+  - AWSS3
   - Firebase (>= 2.5.1)
   - Nimble (~> 3.2.0)
   - Quick (~> 0.9.0)
 
 SPEC CHECKSUMS:
+  AWSCognito: af54fe65171c7c994c134e5d29b1ee60ee234825
+  AWSCore: 917d84b32974136194a905b98c0ae25c9f3350b8
+  AWSS3: 1caaf6b45100503fecf3d418c394519a89409a74
   Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
   Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
   Quick: a5221fc21788b6aeda934805e68b061839bc3165

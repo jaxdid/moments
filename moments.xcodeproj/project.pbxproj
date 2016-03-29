@@ -69,6 +69,7 @@
 		B558338B1CA474BD0039E04C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		B59A63FD5AE53AFFCDEB9E19 /* Pods-moments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moments/Pods-moments.debug.xcconfig"; sourceTree = "<group>"; };
 		C1167CC41CAAD0D500A2961F /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapView.swift; path = moments/MapView.swift; sourceTree = SOURCE_ROOT; };
+		C17F844C1CAAE0C500203E36 /* moments-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "moments-Bridging-Header.h"; sourceTree = "<group>"; };
 		C18A42391CA94C5F00444D6E /* FirebaseMockSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseMockSpec.swift; sourceTree = "<group>"; };
 		C18A423B1CA95EBF00444D6E /* mockFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mockFirebase.swift; sourceTree = "<group>"; };
 		CD8B740496CE114ACD764FFF /* Pods_moments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +217,7 @@
 				EAC3FDAA1CA3F24B0083C500 /* LaunchScreen.storyboard */,
 				EAC3FDAD1CA3F24B0083C500 /* Info.plist */,
 				C18A423B1CA95EBF00444D6E /* mockFirebase.swift */,
+				C17F844C1CAAE0C500203E36 /* moments-Bridging-Header.h */,
 			);
 			path = moments;
 			sourceTree = "<group>";
@@ -658,6 +660,7 @@
 			baseConfigurationReference = B59A63FD5AE53AFFCDEB9E19 /* Pods-moments.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -669,6 +672,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.makersmomentsrj.moments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "moments/moments-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -677,6 +682,7 @@
 			baseConfigurationReference = A7382FDB7B04DB49BE9BA27C /* Pods-moments.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -688,6 +694,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.makersmomentsrj.moments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "moments/moments-Bridging-Header.h";
 			};
 			name = Release;
 		};
