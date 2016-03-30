@@ -8,8 +8,9 @@ class MapAnnotation: NSObject, MKAnnotation {
   let momoji: String!
   let timestamp: String?
   let uid: String?
+  let imageKey: String!
   
-  init(momentId: String, title: String, subtitle: String, coordinate: CLLocationCoordinate2D, momoji: String, timestamp: String, uid: String) {
+  init(momentId: String, title: String, subtitle: String, coordinate: CLLocationCoordinate2D, momoji: String, timestamp: String, uid: String, imageKey: String) {
     self.momentId = momentId
     self.title = title
     self.subtitle = subtitle
@@ -17,6 +18,8 @@ class MapAnnotation: NSObject, MKAnnotation {
     self.momoji = momoji
     self.timestamp = timestamp
     self.uid = uid
+    self.imageKey = imageKey
+
     super.init()
   }
 }

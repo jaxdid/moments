@@ -10,6 +10,9 @@ end
 
 target 'moments' do
     pod 'Firebase', '>= 2.5.1'
+    pod 'AWSCore'
+    pod 'AWSCognito'
+    pod 'AWSS3'
 end
 
 target 'momentsTests' do

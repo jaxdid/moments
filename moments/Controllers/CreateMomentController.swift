@@ -1,21 +1,30 @@
 import CoreLocation
 import Firebase
 import UIKit
+import AWSCore
+import AWSS3
+import AWSCognito
+import AssetsLibrary
 
-class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate {
+class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+  
   @IBOutlet weak var pickerView: UIPickerView!
   @IBOutlet weak var textField: UITextField!
   var userCoordinate: CLLocationCoordinate2D!
+  let s3bucket = "makersmoments"
+  let uploadRequest = AWSS3TransferManagerUploadRequest()
   private let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
   private var userId: String!
   private var userName: String!
   private var selectedMomoji: String!
   private let characterLimit = 30
+  private let imagePicker = UIImagePickerController()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     pickerView.delegate = self
     textField.delegate = self
+    imagePicker.delegate = self
     momentsRef.observeAuthEventWithBlock { authData in
       self.userId = authData.uid
       self.userName = authData.providerData["displayName"] as? String
@@ -48,7 +57,7 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
     default:
       myImageView.image = nil
     }
-
+    
     return myImageView
   }
   
@@ -63,6 +72,13 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
     timestampFormatter.dateStyle = .LongStyle
     timestampFormatter.timeStyle = .MediumStyle
     
+    var imageKey: String
+    if self.uploadRequest.key == nil {
+      imageKey = "no image"
+    } else {
+      imageKey = self.uploadRequest.key!
+    }
+
     let moment = ["momoji": selectedMomoji,
                   "text": textField.text!,
                   "latitude": userCoordinate.latitude,
@@ -70,7 +86,37 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
                   "userName": self.userName,
                   "userId": self.userId,
                   "timestamp": timestampFormatter.stringFromDate(NSDate())]
+                  "imageKey": imageKey]
+
     let momentRef = momentsRef.childByAutoId()
     momentRef.setValue(moment)
+  }
+  
+  func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    
+    
+    let pickedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+    var url: NSURL
+    if let img: UIImage = pickedImage as UIImage {
+      let path = (NSTemporaryDirectory() as NSString).stringByAppendingPathComponent("image.jpg")
+      let imageData: NSData = UIImageJPEGRepresentation(img, 0.01)!
+      imageData.writeToFile(path as String, atomically: true)
+      
+      url = NSURL(fileURLWithPath: path as String)
+      uploadImage(url)
+      
+      dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+    }
+  }
+  
+  @IBAction func takePhoto(sender: AnyObject) {
+    imagePicker.allowsEditing = false
+    imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+    imagePicker.cameraCaptureMode = .Photo
+    imagePicker.modalPresentationStyle =  .FullScreen
+    presentViewController(imagePicker, animated: true, completion: nil)
   }
 }
