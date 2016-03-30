@@ -5,7 +5,7 @@ import UIKit
 
 extension MapController {
   func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-    let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments-12")
+    let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
     
     if (annotation is MKUserLocation) {
       return nil
@@ -46,7 +46,7 @@ extension MapController {
   }
   
   func mapView(mapView: MKMapView!, annotationView: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-    let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments-12")
+    let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
     
     let customAnnotation = annotationView.annotation as! MapAnnotation
     let momentId = customAnnotation.momentId!

@@ -4,7 +4,7 @@ import MapKit
 import UIKit
 
 class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-  private let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments-12")
+  private let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
   @IBOutlet var map: MKMapView!
   var userCoordinate: CLLocationCoordinate2D!
   internal var locationManager: OneShotLocationManager?

@@ -6,7 +6,7 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   @IBOutlet weak var pickerView: UIPickerView!
   @IBOutlet weak var textField: UITextField!
   var userCoordinate: CLLocationCoordinate2D!
-  private let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments-12")
+  private let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
   private var userId: String!
   private var userName: String!
   private var selectedMomoji: String!
