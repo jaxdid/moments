@@ -16,6 +16,7 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
   override func viewDidLoad() {
     super.viewDidLoad()
     map.delegate = self
+    print("FROM MAP VIEW: \(NSUserDefaults.standardUserDefaults().objectForKey("currentUser"))")
     momentsRef.observeEventType(.ChildAdded, withBlock: { snapshot in
       let latitude = snapshot.value.objectForKey("latitude") as! Double
       let longitude = snapshot.value.objectForKey("longitude") as! Double

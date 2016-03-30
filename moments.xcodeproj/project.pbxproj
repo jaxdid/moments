@@ -19,6 +19,10 @@
 		716DCF241CA9665A00B9A651 /* mockFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18A423B1CA95EBF00444D6E /* mockFirebase.swift */; };
 		7C1E3787DDC02B4476C88C1E /* Pods_moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8B740496CE114ACD764FFF /* Pods_moments.framework */; };
 		AD0818E1407656E1ADE6563F /* Pods_momentsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F11029ECB8F52936E84157A /* Pods_momentsUITests.framework */; };
+		B51E4E961CAC817700B91177 /* facebookErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51E4E951CAC817700B91177 /* facebookErrorHandler.swift */; };
+		B51E4E981CAC81F200B91177 /* facebookOAuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51E4E971CAC81F200B91177 /* facebookOAuthHandler.swift */; };
+		B51E4E9B1CAC86D700B91177 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51E4E9A1CAC86D700B91177 /* DataService.swift */; };
+		B51E4E9D1CAC871800B91177 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51E4E9C1CAC871800B91177 /* Constants.swift */; };
 		B55833841CA46D170039E04C /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55833831CA46D170039E04C /* SignInController.swift */; };
 		B558338A1CA472C90039E04C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55833891CA472C90039E04C /* FBSDKCoreKit.framework */; };
 		B558338C1CA474BD0039E04C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B558338B1CA474BD0039E04C /* FBSDKLoginKit.framework */; };
@@ -66,6 +70,10 @@
 		718AFA6B434C4DB5B60D66AE /* Pods-momentsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-momentsUITests/Pods-momentsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		80B5C720F8B205219D4BC161 /* Pods-momentsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-momentsTests/Pods-momentsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A7382FDB7B04DB49BE9BA27C /* Pods-moments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moments.release.xcconfig"; path = "Pods/Target Support Files/Pods-moments/Pods-moments.release.xcconfig"; sourceTree = "<group>"; };
+		B51E4E951CAC817700B91177 /* facebookErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = facebookErrorHandler.swift; sourceTree = "<group>"; };
+		B51E4E971CAC81F200B91177 /* facebookOAuthHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = facebookOAuthHandler.swift; sourceTree = "<group>"; };
+		B51E4E9A1CAC86D700B91177 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		B51E4E9C1CAC871800B91177 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B55833831CA46D170039E04C /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInController.swift; path = ../SignInController.swift; sourceTree = "<group>"; };
 		B55833891CA472C90039E04C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		B558338B1CA474BD0039E04C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -128,6 +136,8 @@
 			children = (
 				122876DB1CA91D890022783E /* touchHelper.swift */,
 				1279BFE01CABCE5E00D3AB89 /* uploadImage.swift */,
+				B51E4E951CAC817700B91177 /* facebookErrorHandler.swift */,
+				B51E4E971CAC81F200B91177 /* facebookOAuthHandler.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -156,6 +166,14 @@
 				C1167CC41CAAD0D500A2961F /* MapView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B51E4E991CAC869A00B91177 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B51E4E9A1CAC86D700B91177 /* DataService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		C12DC210C6995AA8A42D2EB3 /* Frameworks */ = {
@@ -209,6 +227,7 @@
 		EAC3FDA01CA3F24B0083C500 /* moments */ = {
 			isa = PBXGroup;
 			children = (
+				B51E4E991CAC869A00B91177 /* Services */,
 				12B761A81CAAA85C0044067E /* Views */,
 				12B761981CAA6BFF0044067E /* Models */,
 				122876DA1CA91D5B0022783E /* Helpers */,
@@ -221,6 +240,7 @@
 				EAC3FDAD1CA3F24B0083C500 /* Info.plist */,
 				C18A423B1CA95EBF00444D6E /* mockFirebase.swift */,
 				C17F844C1CAAE0C500203E36 /* moments-Bridging-Header.h */,
+				B51E4E9C1CAC871800B91177 /* Constants.swift */,
 			);
 			path = moments;
 			sourceTree = "<group>";
@@ -510,6 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C18A423C1CA95EBF00444D6E /* mockFirebase.swift in Sources */,
+				B51E4E9B1CAC86D700B91177 /* DataService.swift in Sources */,
 				122876DC1CA91D890022783E /* touchHelper.swift in Sources */,
 				1279BFE11CABCE5E00D3AB89 /* uploadImage.swift in Sources */,
 				EAC3FDA41CA3F24B0083C500 /* MapController.swift in Sources */,
@@ -517,7 +538,10 @@
 				B55833841CA46D170039E04C /* SignInController.swift in Sources */,
 				1281C5981CA6B00A00BFD18F /* CreateMomentController.swift in Sources */,
 				EAF439B41CA6B7B5009F014B /* OneShotLocationManager.swift in Sources */,
+				B51E4E961CAC817700B91177 /* facebookErrorHandler.swift in Sources */,
 				C1167CC51CAAD0D500A2961F /* MapView.swift in Sources */,
+				B51E4E9D1CAC871800B91177 /* Constants.swift in Sources */,
+				B51E4E981CAC81F200B91177 /* facebookOAuthHandler.swift in Sources */,
 				12B7619A1CAA6C3E0044067E /* MapAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
