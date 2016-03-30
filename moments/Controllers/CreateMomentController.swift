@@ -68,19 +68,26 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   }
   
   @IBAction func createMoment(sender: UIButton) {
+    let timestampFormatter = NSDateFormatter()
+    timestampFormatter.dateStyle = .LongStyle
+    timestampFormatter.timeStyle = .MediumStyle
+    
     var imageKey: String
     if self.uploadRequest.key == nil {
       imageKey = "no image"
     } else {
       imageKey = self.uploadRequest.key!
     }
+
     let moment = ["momoji": selectedMomoji,
                   "text": textField.text!,
                   "latitude": userCoordinate.latitude,
                   "longitude": userCoordinate.longitude,
                   "userName": self.userName,
                   "userId": self.userId,
+                  "timestamp": timestampFormatter.stringFromDate(NSDate()),
                   "imageKey": imageKey]
+
     let momentRef = momentsRef.childByAutoId()
     momentRef.setValue(moment)
   }

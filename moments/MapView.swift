@@ -1,16 +1,16 @@
-import UIKit
+import Firebase
 import MapKit
+import UIKit
 import AWSS3
 
 extension MapController {
-  
   func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
     if (annotation is MKUserLocation) {
       return nil
     }
     
-    let reuseId = "mapAnnotation"
     let customAnnotation = annotation as! MapAnnotation
+    let reuseId = customAnnotation.momentId
     
     var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
     if annotationView == nil {
@@ -24,6 +24,32 @@ extension MapController {
         annotationView?.image = UIImage(named:"grinning_face")
       }
       annotationView?.canShowCallout = true
+      
+      momentsRef.observeAuthEventWithBlock { authData in
+        if customAnnotation.uid == authData.uid {
+          let btn = UIButton(type: .DetailDisclosure)
+          //btn.setTitle("X", forState: Normal)
+          annotationView?.rightCalloutAccessoryView = btn
+        }
+      }
+    }
+    else {
+      annotationView?.annotation = annotation
+    }
+    
+    return annotationView
+  }
+  
+  func mapView(mapView: MKMapView!, annotationView: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+    let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
+    
+    let customAnnotation = annotationView.annotation as! MapAnnotation
+    let momentId = customAnnotation.momentId!
+    let momentPathRef = Firebase(url: "\(momentsRef)/\(momentId)")
+    
+    if control == annotationView.rightCalloutAccessoryView {
+      momentPathRef.removeValue()
+      mapView.removeAnnotation(customAnnotation)
     }
     else {
       annotationView?.annotation = annotation
