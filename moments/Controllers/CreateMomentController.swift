@@ -11,14 +11,14 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   @IBOutlet weak var pickerView: UIPickerView!
   @IBOutlet weak var textField: UITextField!
   var userCoordinate: CLLocationCoordinate2D!
+  let s3bucket = "makersmoments"
+  let uploadRequest = AWSS3TransferManagerUploadRequest()
   private let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
   private var userId: String!
   private var userName: String!
   private var selectedMomoji: String!
   private let characterLimit = 30
   private let imagePicker = UIImagePickerController()
-  private let s3bucket = "makersmoments"
-  private let uploadRequest = AWSS3TransferManagerUploadRequest()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -96,35 +96,13 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
       imageData.writeToFile(path as String, atomically: true)
       
       url = NSURL(fileURLWithPath: path as String)
+      uploadImage(url)
       
-      uploadRequest.body = url
-      uploadRequest.key = NSProcessInfo.processInfo().globallyUniqueString + ".jpg"
-      uploadRequest.bucket = self.s3bucket
-      uploadRequest.contentType = "image/"
-      let transferManager = AWSS3TransferManager.defaultS3TransferManager()
-      transferManager.upload(uploadRequest).continueWithBlock { (task) -> AnyObject! in
-        if let error = task.error {
-          print("Upload failed (\(error))")
-        }
-        if let exception = task.exception {
-          print("Upload failed (\(exception))")
-        }
-        if task.result != nil {
-          let s3URL = NSURL(string: "http://s3.amazonaws.com/\(self.s3bucket)/\(self.uploadRequest.key!)")!
-          print("Uploaded to:\n\(s3URL)")
-        }
-        else {
-          print("Unexpected empty result.")
-        }
-        return nil
-      }
-      
+      dismissViewControllerAnimated(true, completion: nil)
     }
     
-    dismissViewControllerAnimated(true, completion: nil)
-  }
-  
-  func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+    }
   }
   
   @IBAction func takePhoto(sender: AnyObject) {
