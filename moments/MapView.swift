@@ -49,7 +49,6 @@ extension MapController {
     options.mapType = .SatelliteFlyover
     options.camera = MKMapCamera(lookingAtCenterCoordinate: annotationView.annotation!.coordinate, fromDistance: 250, pitch: 65, heading: 0)
     
-    // =====================================================================================
     if customAnnotation.imageKey != "no image" {
           let downloadingFilePath1 = (NSTemporaryDirectory() as NSString).stringByAppendingPathComponent("temp-image")
           let downloadingFileURL1 = NSURL(fileURLWithPath: downloadingFilePath1 )
@@ -82,8 +81,5 @@ extension MapController {
             return nil
           }
     }
-    // =====================================================================================
-
-    
   }
 }

@@ -7,7 +7,7 @@ import AWSCore
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
-    var keys: NSDictionary?
+  var keys: NSDictionary?
   
   func applicationWillResignActive(application: UIApplication) {
     

@@ -55,19 +55,6 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
       }.resume()
   }
   
-  func downloadImage(url: NSURL){
-    print("Download Started")
-    print("lastPathComponent: " + (url.lastPathComponent ?? ""))
-    getDataFromUrl(url) { (data, response, error)  in
-      dispatch_async(dispatch_get_main_queue()) { () -> Void in
-        guard let data = data where error == nil else { return }
-        print(response?.suggestedFilename ?? "")
-        print("Download Finished")
-        self.image = UIImage(data: data)
-      }
-    }
-  }
-  
   private func setMapView(userCoordinate: CLLocationCoordinate2D) {
     let latitude = userCoordinate.latitude
     let longitude = userCoordinate.longitude
