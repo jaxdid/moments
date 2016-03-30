@@ -15,41 +15,18 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
   
   override func viewDidLoad() {
     super.viewDidLoad()
-//    imageVIew.imageFromUrl("http://s3.amazonaws.com/makersmoments/19DE1592-2C72-45D6-BCBE-FEEFBD322CA1-2254-000004110A03C53C.jpg")
     map.delegate = self
     momentsRef.observeEventType(.ChildAdded, withBlock: { snapshot in
       let latitude = snapshot.value.objectForKey("latitude") as! Double
       let longitude = snapshot.value.objectForKey("longitude") as! Double
       let text = snapshot.value.objectForKey("text") as! String
       let momoji = snapshot.value.objectForKey("momoji") as! String
-      // =====================================================================================
-      let downloadingFilePath1 = (NSTemporaryDirectory() as NSString).stringByAppendingPathComponent("temp-image")
-      let downloadingFileURL1 = NSURL(fileURLWithPath: downloadingFilePath1 )
-      let transferManager = AWSS3TransferManager.defaultS3TransferManager()
-      
-      let readRequest1 : AWSS3TransferManagerDownloadRequest = AWSS3TransferManagerDownloadRequest()
-      readRequest1.bucket = "makersmoments"
-      readRequest1.key =  snapshot.value.objectForKey("imageKey") as! String
-      readRequest1.downloadingFileURL = downloadingFileURL1
-      
-      let task = transferManager.download(readRequest1)
-      task.continueWithBlock { (task) -> AnyObject! in
-        if task.error != nil {
-        } else {
-          let code = dispatch_async(dispatch_get_main_queue()
-            , { () -> Void in
-              self.image = UIImage(contentsOfFile: downloadingFilePath1)
-//              self.selectedImage.setNeedsDisplay()
-//              self.selectedImage.reloadInputViews()
-          })
-        }
-        return nil
-      }
-      // =====================================================================================
+      let imageKey = snapshot.value.objectForKey("imageKey") as! String
       let moment = MapAnnotation(title: "\(text)",
                                  subtitle: snapshot.value.objectForKey("userName") as! String,
                                  coordinate: CLLocationCoordinate2DMake(latitude, longitude),
-                                 momoji: momoji)
+                                 momoji: momoji,
+                                 imageKey: imageKey)
       self.map.addAnnotation(moment)
     })
 

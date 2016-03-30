@@ -68,14 +68,19 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   }
   
   @IBAction func createMoment(sender: UIButton) {
-    print(uploadRequest.key)
+    var imageKey: String
+    if self.uploadRequest.key == nil {
+      imageKey = "no image"
+    } else {
+      imageKey = self.uploadRequest.key!
+    }
     let moment = ["momoji": selectedMomoji,
                   "text": textField.text!,
                   "latitude": userCoordinate.latitude,
                   "longitude": userCoordinate.longitude,
                   "userName": self.userName,
                   "userId": self.userId,
-                  "imageKey": "\(self.uploadRequest.key!)"]
+                  "imageKey": imageKey]
     let momentRef = momentsRef.childByAutoId()
     momentRef.setValue(moment)
   }
