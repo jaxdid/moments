@@ -13,7 +13,6 @@ class MapAnnotation: NSObject, MKAnnotation {
     self.coordinate = coordinate
     self.momoji = momoji
     self.imageKey = imageKey
-    
     super.init()
   }
 }
