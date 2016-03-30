@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		06139C86EA3ACF93E3F4E360 /* Pods_momentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B862552013E70AEF9FA7EF /* Pods_momentsTests.framework */; };
 		122876DC1CA91D890022783E /* touchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122876DB1CA91D890022783E /* touchHelper.swift */; };
+		1279BFE11CABCE5E00D3AB89 /* uploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1279BFE01CABCE5E00D3AB89 /* uploadImage.swift */; };
 		1281C5941CA6AEF200BFD18F /* CreateMomentUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5931CA6AEF200BFD18F /* CreateMomentUnitTests.swift */; };
 		1281C5981CA6B00A00BFD18F /* CreateMomentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5971CA6B00A00BFD18F /* CreateMomentController.swift */; };
 		1281C59A1CA6B24D00BFD18F /* MapControllerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5991CA6B24D00BFD18F /* MapControllerUnitTests.swift */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		122876DB1CA91D890022783E /* touchHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = touchHelper.swift; path = moments/touchHelper.swift; sourceTree = SOURCE_ROOT; };
+		1279BFE01CABCE5E00D3AB89 /* uploadImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = uploadImage.swift; path = Controllers/uploadImage.swift; sourceTree = "<group>"; };
 		1281C5931CA6AEF200BFD18F /* CreateMomentUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMomentUnitTests.swift; sourceTree = "<group>"; };
 		1281C5971CA6B00A00BFD18F /* CreateMomentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateMomentController.swift; path = moments/Controllers/CreateMomentController.swift; sourceTree = SOURCE_ROOT; };
 		1281C5991CA6B24D00BFD18F /* MapControllerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapControllerUnitTests.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		B558338B1CA474BD0039E04C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		B59A63FD5AE53AFFCDEB9E19 /* Pods-moments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moments/Pods-moments.debug.xcconfig"; sourceTree = "<group>"; };
 		C1167CC41CAAD0D500A2961F /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapView.swift; path = moments/MapView.swift; sourceTree = SOURCE_ROOT; };
+		C17F844C1CAAE0C500203E36 /* moments-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "moments-Bridging-Header.h"; sourceTree = "<group>"; };
 		C18A42391CA94C5F00444D6E /* FirebaseMockSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseMockSpec.swift; sourceTree = "<group>"; };
 		C18A423B1CA95EBF00444D6E /* mockFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mockFirebase.swift; sourceTree = "<group>"; };
 		CD8B740496CE114ACD764FFF /* Pods_moments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				122876DB1CA91D890022783E /* touchHelper.swift */,
+				1279BFE01CABCE5E00D3AB89 /* uploadImage.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -216,6 +220,7 @@
 				EAC3FDAA1CA3F24B0083C500 /* LaunchScreen.storyboard */,
 				EAC3FDAD1CA3F24B0083C500 /* Info.plist */,
 				C18A423B1CA95EBF00444D6E /* mockFirebase.swift */,
+				C17F844C1CAAE0C500203E36 /* moments-Bridging-Header.h */,
 			);
 			path = moments;
 			sourceTree = "<group>";
@@ -317,7 +322,7 @@
 				TargetAttributes = {
 					EAC3FD9D1CA3F24B0083C500 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 2TL6MR9Z8E;
+						DevelopmentTeam = KXQ8F9SK2C;
 					};
 					EAC3FDB61CA3F4470083C500 = {
 						CreatedOnToolsVersion = 7.2;
@@ -506,6 +511,7 @@
 			files = (
 				C18A423C1CA95EBF00444D6E /* mockFirebase.swift in Sources */,
 				122876DC1CA91D890022783E /* touchHelper.swift in Sources */,
+				1279BFE11CABCE5E00D3AB89 /* uploadImage.swift in Sources */,
 				EAC3FDA41CA3F24B0083C500 /* MapController.swift in Sources */,
 				EAC3FDA21CA3F24B0083C500 /* AppDelegate.swift in Sources */,
 				B55833841CA46D170039E04C /* SignInController.swift in Sources */,
@@ -658,6 +664,7 @@
 			baseConfigurationReference = B59A63FD5AE53AFFCDEB9E19 /* Pods-moments.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -666,9 +673,11 @@
 				);
 				INFOPLIST_FILE = moments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.makersmomentsrj.moments;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makersmomentstcp.moments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "moments/moments-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -677,6 +686,7 @@
 			baseConfigurationReference = A7382FDB7B04DB49BE9BA27C /* Pods-moments.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -685,9 +695,10 @@
 				);
 				INFOPLIST_FILE = moments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.makersmomentsrj.moments;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makersmomentstcp.moments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "moments/moments-Bridging-Header.h";
 			};
 			name = Release;
 		};

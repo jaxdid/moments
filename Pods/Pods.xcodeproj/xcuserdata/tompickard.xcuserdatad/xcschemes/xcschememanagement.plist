@@ -4,6 +4,21 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AWSCognito.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSCore.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSS3.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Firebase.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,7 +52,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>8AC6E18438DBE803BB48C01C2B20567A</key>
+		<key>2424F3B8426EC2E6A0EEA813BFA12ACD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2D93A8C948B13767EFDA624AD8424088</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3B41A9B1D49827D58E203AF61D34F608</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -48,6 +73,11 @@
 			<true/>
 		</dict>
 		<key>B7AC9326D819482593FE118E915409D7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DBD0E93EE24E5E3A484593441DD7A7B5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
