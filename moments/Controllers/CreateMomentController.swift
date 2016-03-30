@@ -85,7 +85,7 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
                   "longitude": userCoordinate.longitude,
                   "userName": self.userName,
                   "userId": self.userId,
-                  "timestamp": timestampFormatter.stringFromDate(NSDate())]
+                  "timestamp": timestampFormatter.stringFromDate(NSDate()),
                   "imageKey": imageKey]
 
     let momentRef = momentsRef.childByAutoId()
