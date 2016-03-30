@@ -30,8 +30,6 @@ extension MapController {
       
       momentsRef.observeAuthEventWithBlock { authData in
         if customAnnotation.uid == authData.uid {
-          print("[Inside] Moment owner: \(customAnnotation.uid)")
-          print("[Inside] Current user: \(authData.uid)")
           let btn = UIButton(type: .DetailDisclosure)
           //btn.setTitle("X", forState: Normal)
           annotationView?.rightCalloutAccessoryView = btn
@@ -51,9 +49,6 @@ extension MapController {
     let customAnnotation = annotationView.annotation as! MapAnnotation
     let momentId = customAnnotation.momentId!
     let momentPathRef = Firebase(url: "\(momentsRef)/\(momentId)")
-    
-    print("Moment ID: \(momentId)")
-    print("Moment path ref: \(momentPathRef)")
     
     if control == annotationView.rightCalloutAccessoryView {
       momentPathRef.removeValue()
