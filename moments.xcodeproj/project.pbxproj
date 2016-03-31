@@ -26,6 +26,7 @@
 		71B7ADC11CAD689D001C3133 /* saveToTemporaryDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7ADBF1CAD689D001C3133 /* saveToTemporaryDirectory.swift */; };
 		71B7ADC21CAD689D001C3133 /* uploadImageErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7ADC01CAD689D001C3133 /* uploadImageErrorHandler.swift */; };
 		71B7ADC41CAD6B48001C3133 /* uploadImageResultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7ADC31CAD6B48001C3133 /* uploadImageResultHandler.swift */; };
+		71B7ADC71CAD7D0D001C3133 /* buildAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7ADC61CAD7D0D001C3133 /* buildAnnotationView.swift */; };
 		7C1E3787DDC02B4476C88C1E /* Pods_moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8B740496CE114ACD764FFF /* Pods_moments.framework */; };
 		AD0818E1407656E1ADE6563F /* Pods_momentsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F11029ECB8F52936E84157A /* Pods_momentsUITests.framework */; };
 		B51E4E9B1CAC86D700B91177 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51E4E9A1CAC86D700B91177 /* DataService.swift */; };
@@ -86,6 +87,7 @@
 		71B7ADBF1CAD689D001C3133 /* saveToTemporaryDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = saveToTemporaryDirectory.swift; path = ImageHandling/saveToTemporaryDirectory.swift; sourceTree = "<group>"; };
 		71B7ADC01CAD689D001C3133 /* uploadImageErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = uploadImageErrorHandler.swift; path = ImageHandling/uploadImageErrorHandler.swift; sourceTree = "<group>"; };
 		71B7ADC31CAD6B48001C3133 /* uploadImageResultHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = uploadImageResultHandler.swift; path = ImageHandling/uploadImageResultHandler.swift; sourceTree = "<group>"; };
+		71B7ADC61CAD7D0D001C3133 /* buildAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = buildAnnotationView.swift; sourceTree = "<group>"; };
 		80B5C720F8B205219D4BC161 /* Pods-momentsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-momentsTests/Pods-momentsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A7382FDB7B04DB49BE9BA27C /* Pods-moments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moments.release.xcconfig"; path = "Pods/Target Support Files/Pods-moments/Pods-moments.release.xcconfig"; sourceTree = "<group>"; };
 		B51E4E9A1CAC86D700B91177 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		122876DA1CA91D5B0022783E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				71B7ADC51CAD7C8E001C3133 /* Annotations */,
 				EACF750A1CAD1E2900D40919 /* Creation */,
 				1252C0AD1CAD16EC00A72A70 /* ImageHandlers */,
 				1252C0A71CAD165A00A72A70 /* Authentication */,
@@ -206,6 +209,14 @@
 				1252C0B21CAD195E00A72A70 /* MapView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		71B7ADC51CAD7C8E001C3133 /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				71B7ADC61CAD7D0D001C3133 /* buildAnnotationView.swift */,
+			);
+			path = Annotations;
 			sourceTree = "<group>";
 		};
 		B51E4E991CAC869A00B91177 /* Services */ = {
@@ -592,6 +603,7 @@
 				1252C0B31CAD195E00A72A70 /* MapView.swift in Sources */,
 				1252C0AB1CAD16E400A72A70 /* facebookErrorHandler.swift in Sources */,
 				71B7ADC11CAD689D001C3133 /* saveToTemporaryDirectory.swift in Sources */,
+				71B7ADC71CAD7D0D001C3133 /* buildAnnotationView.swift in Sources */,
 				1252C0B01CAD170600A72A70 /* downloadImage.swift in Sources */,
 				EAF439B41CA6B7B5009F014B /* OneShotLocationManager.swift in Sources */,
 				B51E4E9D1CAC871800B91177 /* Constants.swift in Sources */,

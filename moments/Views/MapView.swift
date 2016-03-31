@@ -5,7 +5,6 @@ import UIKit
 
 extension MapController {
   func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-    let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
     
     if (annotation is MKUserLocation) {
       return nil
@@ -14,34 +13,10 @@ extension MapController {
     let customAnnotation = annotation as! MapAnnotation
     let reuseId = customAnnotation.momentId!
     
-    var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
-    if annotationView == nil {
-      annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-      switch customAnnotation.momoji {
-      case "1F600":
-        annotationView?.image = UIImage(named:"grinning_face")
-      case "1F602":
-        annotationView?.image = UIImage(named:"joy")
-      default:
-        annotationView?.image = UIImage(named:"grinning_face")
-      }
-      annotationView?.canShowCallout = true
-      
-      momentsRef.observeAuthEventWithBlock { authData in
-        if customAnnotation.uid == authData.uid {
-          print("Moment owner: \(customAnnotation.uid)")
-          print("Current user: \(authData.uid)")
-          let btn = UIButton(type: .DetailDisclosure)
-          //btn.setTitle("X", forState: Normal)
-          annotationView?.rightCalloutAccessoryView = btn
-        }
-      }
-    }
-    else {
-      annotationView?.annotation = annotation
-    }
+    let annotationView = BuildAnnotationView().run(mapView, reuseId: reuseId, annotation: annotation, customAnnotation: customAnnotation)
     
     configureDetailView(annotationView!, customAnnotation: customAnnotation)
+    
     
     return annotationView
   }
@@ -61,13 +36,13 @@ extension MapController {
   
   func configureDetailView(annotationView: MKAnnotationView, customAnnotation: MapAnnotation) {
     print (customAnnotation.imageKey)
-    let width = 200
-    let height = 300
+    let width = 5
+    let height = 5
     
     let snapshotView = UIView()
     let views = ["snapshotView": snapshotView]
-    snapshotView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[snapshotView(200)]", options: [], metrics: nil, views: views))
-    snapshotView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[snapshotView(300)]", options: [], metrics: nil, views: views))
+    snapshotView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[snapshotView(\(width))]", options: [], metrics: nil, views: views))
+    snapshotView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[snapshotView(\(height))]", options: [], metrics: nil, views: views))
     
     let options = MKMapSnapshotOptions()
     options.size = CGSize(width: width, height: height)
@@ -81,10 +56,12 @@ extension MapController {
         if snapshot != nil {
           let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
           imageView.image = self.image
-          snapshotView.addSubview(imageView)
+            let textView = UILabel()
+            textView.text = "hello"
+            snapshotView.addSubview(textView)
+            
         }
       }
-      
       annotationView.detailCalloutAccessoryView = snapshotView
     }
   }
