@@ -16,12 +16,7 @@ class SignInController: UIViewController {
     let facebookLogin = FBSDKLoginManager()
     facebookLogin.logInWithReadPermissions(["email"], handler: {
       (facebookResult, facebookError) -> Void in
-      let errorHandler = facebookErrorHandler()
-      errorHandler.handle(self, facebookResult: facebookResult, facebookError: facebookError)
+      facebookErrorHandler().run(self, facebookResult: facebookResult, facebookError: facebookError)
     })
   }
-  
-//  func performSegue() {
-//    self.performSegueWithIdentifier("signIn", sender: nil)
-//  }
 }

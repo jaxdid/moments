@@ -32,7 +32,6 @@
 		71B7ADC71CAD7D0D001C3133 /* buildAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7ADC61CAD7D0D001C3133 /* buildAnnotationView.swift */; };
 		7C1E3787DDC02B4476C88C1E /* Pods_moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8B740496CE114ACD764FFF /* Pods_moments.framework */; };
 		AD0818E1407656E1ADE6563F /* Pods_momentsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F11029ECB8F52936E84157A /* Pods_momentsUITests.framework */; };
-		B51E4E9B1CAC86D700B91177 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51E4E9A1CAC86D700B91177 /* DataService.swift */; };
 		B51E4E9D1CAC871800B91177 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51E4E9C1CAC871800B91177 /* Constants.swift */; };
 		B558338A1CA472C90039E04C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55833891CA472C90039E04C /* FBSDKCoreKit.framework */; };
 		B558338C1CA474BD0039E04C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B558338B1CA474BD0039E04C /* FBSDKLoginKit.framework */; };
@@ -96,7 +95,6 @@
 		71B7ADC61CAD7D0D001C3133 /* buildAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = buildAnnotationView.swift; sourceTree = "<group>"; };
 		80B5C720F8B205219D4BC161 /* Pods-momentsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-momentsTests/Pods-momentsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A7382FDB7B04DB49BE9BA27C /* Pods-moments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moments.release.xcconfig"; path = "Pods/Target Support Files/Pods-moments/Pods-moments.release.xcconfig"; sourceTree = "<group>"; };
-		B51E4E9A1CAC86D700B91177 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		B51E4E9C1CAC871800B91177 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B55833891CA472C90039E04C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		B558338B1CA474BD0039E04C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -228,14 +226,6 @@
 			path = Annotations;
 			sourceTree = "<group>";
 		};
-		B51E4E991CAC869A00B91177 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				B51E4E9A1CAC86D700B91177 /* DataService.swift */,
-			);
-			name = Services;
-			sourceTree = "<group>";
-		};
 		C12DC210C6995AA8A42D2EB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,7 +277,6 @@
 		EAC3FDA01CA3F24B0083C500 /* moments */ = {
 			isa = PBXGroup;
 			children = (
-				B51E4E991CAC869A00B91177 /* Services */,
 				12B761A81CAAA85C0044067E /* Views */,
 				12B761981CAA6BFF0044067E /* Models */,
 				122876DA1CA91D5B0022783E /* Helpers */,
@@ -411,7 +400,7 @@
 				TargetAttributes = {
 					EAC3FD9D1CA3F24B0083C500 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 69LDF699DP;
+						DevelopmentTeam = KXQ8F9SK2C;
 					};
 					EAC3FDB61CA3F4470083C500 = {
 						CreatedOnToolsVersion = 7.2;
@@ -604,7 +593,6 @@
 				C18A423C1CA95EBF00444D6E /* mockFirebase.swift in Sources */,
 				1252C0B11CAD170600A72A70 /* uploadImage.swift in Sources */,
 				EACF750E1CAD243400D40919 /* moment.swift in Sources */,
-				B51E4E9B1CAC86D700B91177 /* DataService.swift in Sources */,
 				EACF75131CAD486100D40919 /* imageKeyValidator.swift in Sources */,
 				EAC3FDA21CA3F24B0083C500 /* AppDelegate.swift in Sources */,
 				12A295F41CADC7B6002B15E9 /* optionsAdder.swift in Sources */,
@@ -779,7 +767,7 @@
 				);
 				INFOPLIST_FILE = moments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.makersmomentsDHR.moments;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makersmomentstcp.moments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "moments/moments-Bridging-Header.h";
@@ -801,7 +789,7 @@
 				);
 				INFOPLIST_FILE = moments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.makersmomentsDHR.moments;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makersmomentstcp.moments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "moments/moments-Bridging-Header.h";
