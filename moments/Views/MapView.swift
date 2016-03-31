@@ -27,15 +27,11 @@ extension MapController {
       }
       annotationView?.canShowCallout = true
       
-      momentsRef.observeAuthEventWithBlock { authData in
-        if customAnnotation.uid == authData.uid {
-          print("Moment owner: \(customAnnotation.uid)")
-          print("Current user: \(authData.uid)")
+        if customAnnotation.uid == NSUserDefaults.standardUserDefaults().objectForKey("currentUser")?["uid"] {
           let btn = UIButton(type: .DetailDisclosure)
           //btn.setTitle("X", forState: Normal)
           annotationView?.rightCalloutAccessoryView = btn
         }
-      }
     }
     else {
       annotationView?.annotation = annotation

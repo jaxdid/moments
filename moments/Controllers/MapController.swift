@@ -50,12 +50,13 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
   @IBAction func focusMapOnUser() {
     locationManager = OneShotLocationManager()
     locationManager!.fetchWithCompletion {location, error in
-      if let unwrappedLocation = location {
-        self.userCoordinate = unwrappedLocation.coordinate
-        self.setMapView(self.userCoordinate)
-      } else if let err = error {
-        print(err.localizedDescription)
-      }
+      if let err = error {
+      print(err.localizedDescription)
+    }
+    else if let unwrappedLocation = location {
+      self.userCoordinate = unwrappedLocation.coordinate
+      MapViewUpdater().build(self.map, userCoordinate: unwrappedLocation.coordinate)
+    }
     }
   }
   
@@ -63,15 +64,6 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
     NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
       completion(data: data, response: response, error: error)
       }.resume()
-  }
-  
-  private func setMapView(userCoordinate: CLLocationCoordinate2D) {
-    let latitude = userCoordinate.latitude
-    let longitude = userCoordinate.longitude
-    let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
-    let viewRadius: CLLocationDegrees = 0.001
-    let region = MKCoordinateRegionMake(coordinate, MKCoordinateSpanMake(viewRadius, viewRadius))
-    self.map.setRegion(region, animated: true)
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
