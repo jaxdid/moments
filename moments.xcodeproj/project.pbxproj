@@ -15,6 +15,7 @@
 		1252C0AC1CAD16E400A72A70 /* facebookOAuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252C0AA1CAD16E400A72A70 /* facebookOAuthHandler.swift */; };
 		1252C0B01CAD170600A72A70 /* downloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252C0AE1CAD170600A72A70 /* downloadImage.swift */; };
 		1252C0B11CAD170600A72A70 /* uploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252C0AF1CAD170600A72A70 /* uploadImage.swift */; };
+		1252C0B31CAD195E00A72A70 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252C0B21CAD195E00A72A70 /* MapView.swift */; };
 		1281C5941CA6AEF200BFD18F /* CreateMomentUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5931CA6AEF200BFD18F /* CreateMomentUnitTests.swift */; };
 		1281C5981CA6B00A00BFD18F /* CreateMomentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5971CA6B00A00BFD18F /* CreateMomentController.swift */; };
 		1281C59A1CA6B24D00BFD18F /* MapControllerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5991CA6B24D00BFD18F /* MapControllerUnitTests.swift */; };
@@ -28,7 +29,6 @@
 		B51E4E9D1CAC871800B91177 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51E4E9C1CAC871800B91177 /* Constants.swift */; };
 		B558338A1CA472C90039E04C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55833891CA472C90039E04C /* FBSDKCoreKit.framework */; };
 		B558338C1CA474BD0039E04C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B558338B1CA474BD0039E04C /* FBSDKLoginKit.framework */; };
-		C1167CC51CAAD0D500A2961F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1167CC41CAAD0D500A2961F /* MapView.swift */; };
 		C18A423A1CA94C5F00444D6E /* FirebaseMockSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18A42391CA94C5F00444D6E /* FirebaseMockSpec.swift */; };
 		C18A423C1CA95EBF00444D6E /* mockFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18A423B1CA95EBF00444D6E /* mockFirebase.swift */; };
 		EAC3FDA21CA3F24B0083C500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3FDA11CA3F24B0083C500 /* AppDelegate.swift */; };
@@ -65,6 +65,7 @@
 		1252C0AA1CAD16E400A72A70 /* facebookOAuthHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = facebookOAuthHandler.swift; sourceTree = "<group>"; };
 		1252C0AE1CAD170600A72A70 /* downloadImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = downloadImage.swift; path = ImageHandling/downloadImage.swift; sourceTree = "<group>"; };
 		1252C0AF1CAD170600A72A70 /* uploadImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = uploadImage.swift; path = ImageHandling/uploadImage.swift; sourceTree = "<group>"; };
+		1252C0B21CAD195E00A72A70 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		1281C5931CA6AEF200BFD18F /* CreateMomentUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMomentUnitTests.swift; sourceTree = "<group>"; };
 		1281C5971CA6B00A00BFD18F /* CreateMomentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateMomentController.swift; path = moments/Controllers/CreateMomentController.swift; sourceTree = SOURCE_ROOT; };
 		1281C5991CA6B24D00BFD18F /* MapControllerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapControllerUnitTests.swift; sourceTree = "<group>"; };
@@ -81,7 +82,6 @@
 		B55833891CA472C90039E04C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		B558338B1CA474BD0039E04C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		B59A63FD5AE53AFFCDEB9E19 /* Pods-moments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moments/Pods-moments.debug.xcconfig"; sourceTree = "<group>"; };
-		C1167CC41CAAD0D500A2961F /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapView.swift; path = moments/MapView.swift; sourceTree = SOURCE_ROOT; };
 		C17F844C1CAAE0C500203E36 /* moments-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "moments-Bridging-Header.h"; sourceTree = "<group>"; };
 		C18A42391CA94C5F00444D6E /* FirebaseMockSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseMockSpec.swift; sourceTree = "<group>"; };
 		C18A423B1CA95EBF00444D6E /* mockFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mockFirebase.swift; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 		12B761A81CAAA85C0044067E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C1167CC41CAAD0D500A2961F /* MapView.swift */,
+				1252C0B21CAD195E00A72A70 /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -555,10 +555,10 @@
 				EAC3FDA21CA3F24B0083C500 /* AppDelegate.swift in Sources */,
 				1252C0A61CAD15DB00A72A70 /* SignInController.swift in Sources */,
 				1281C5981CA6B00A00BFD18F /* CreateMomentController.swift in Sources */,
+				1252C0B31CAD195E00A72A70 /* MapView.swift in Sources */,
 				1252C0AB1CAD16E400A72A70 /* facebookErrorHandler.swift in Sources */,
 				1252C0B01CAD170600A72A70 /* downloadImage.swift in Sources */,
 				EAF439B41CA6B7B5009F014B /* OneShotLocationManager.swift in Sources */,
-				C1167CC51CAAD0D500A2961F /* MapView.swift in Sources */,
 				B51E4E9D1CAC871800B91177 /* Constants.swift in Sources */,
 				12B7619A1CAA6C3E0044067E /* MapAnnotation.swift in Sources */,
 				1252C0AC1CAD16E400A72A70 /* facebookOAuthHandler.swift in Sources */,
