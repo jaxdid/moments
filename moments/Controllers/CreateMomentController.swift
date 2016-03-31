@@ -11,7 +11,6 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   @IBOutlet weak var pickerView: UIPickerView!
   @IBOutlet weak var textField: UITextField!
   var userCoordinate: CLLocationCoordinate2D!
-  let s3bucket = "makersmoments"
   private let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
   private var uid: String!
   var userName: String!
@@ -19,8 +18,8 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   private let characterLimit = 30
   private let imagePicker = UIImagePickerController()
   let uploadRequest = AWSS3TransferManagerUploadRequest()
-  
-  override func viewDidLoad() {
+
+    override func viewDidLoad() {
     super.viewDidLoad()
     print("FROM CREATE FORM VIEW: \(NSUserDefaults.standardUserDefaults().objectForKey("currentUser"))")
     pickerView.delegate = self
@@ -86,18 +85,7 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
     
     
     let pickedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-    var url: NSURL
-    if let img: UIImage = pickedImage as UIImage {
-      let path = (NSTemporaryDirectory() as NSString).stringByAppendingPathComponent("image.jpg")
-      let imageData: NSData = UIImageJPEGRepresentation(img, 0.01)!
-      imageData.writeToFile(path as String, atomically: true)
-      
-      url = NSURL(fileURLWithPath: path as String)
-      uploadImage(url)
-      
-      dismissViewControllerAnimated(true, completion: nil)
-    }
-    
+    SaveToTemporaryDirectory().run(self, pickedImage: pickedImage, uploadRequest: uploadRequest)
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
     }
   }
