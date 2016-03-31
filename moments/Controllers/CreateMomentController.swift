@@ -12,13 +12,13 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   @IBOutlet weak var textField: UITextField!
   var userCoordinate: CLLocationCoordinate2D!
   let s3bucket = "makersmoments"
-  let uploadRequest = AWSS3TransferManagerUploadRequest()
   private let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
   private var uid: String!
   var userName: String!
   private var selectedMomoji: String!
   private let characterLimit = 30
   private let imagePicker = UIImagePickerController()
+  let uploadRequest = AWSS3TransferManagerUploadRequest()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -67,23 +67,16 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   }
   
   @IBAction func createMoment(sender: UIButton) {
-    
-    let formatTime = Formatter().formatTime()
-    
-    var imageKey: String
-    if self.uploadRequest.key == nil {
-      imageKey = "no image"
-    } else {
-      imageKey = self.uploadRequest.key!
-    }
+    let currentTime = Formatter().currentTime()
+      
     let moment = Moment().build(selectedMomoji,
                   text: textField.text!,
                   latitude: userCoordinate.latitude,
                   longitude: userCoordinate.longitude,
                   userName: userName,
                   uid: self.uid,
-                  timestamp: formatTime.stringFromDate(NSDate()),
-                  imageKey: imageKey)
+                  timestamp: currentTime,
+                  imageKey: ImageKeyValidator().run(uploadRequest))
 
     let momentRef = momentsRef.childByAutoId()
     momentRef.setValue(moment)

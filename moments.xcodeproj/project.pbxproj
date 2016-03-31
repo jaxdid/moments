@@ -40,6 +40,7 @@
 		EACF750E1CAD243400D40919 /* moment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACF750D1CAD243400D40919 /* moment.swift */; };
 		EACF75101CAD305700D40919 /* MomentUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACF750F1CAD305700D40919 /* MomentUnitTests.swift */; };
 		EACF75111CAD329D00D40919 /* moment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACF750D1CAD243400D40919 /* moment.swift */; };
+		EACF75131CAD486100D40919 /* imageKeyValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACF75121CAD486100D40919 /* imageKeyValidator.swift */; };
 		EAD58E381CA437C800E85D4C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD58E371CA437C800E85D4C /* CoreLocation.framework */; };
 		EAF439B41CA6B7B5009F014B /* OneShotLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF439B31CA6B7B5009F014B /* OneShotLocationManager.swift */; };
 /* End PBXBuildFile section */
@@ -105,6 +106,7 @@
 		EACF750B1CAD1E8600D40919 /* timeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timeFormatter.swift; sourceTree = "<group>"; };
 		EACF750D1CAD243400D40919 /* moment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = moment.swift; sourceTree = "<group>"; };
 		EACF750F1CAD305700D40919 /* MomentUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentUnitTests.swift; sourceTree = "<group>"; };
+		EACF75121CAD486100D40919 /* imageKeyValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageKeyValidator.swift; sourceTree = "<group>"; };
 		EAD58E371CA437C800E85D4C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		EAF439B31CA6B7B5009F014B /* OneShotLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OneShotLocationManager.swift; path = ../OneShotLocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +149,7 @@
 				1252C0AD1CAD16EC00A72A70 /* ImageHandlers */,
 				1252C0A71CAD165A00A72A70 /* Authentication */,
 				1252C0991CAD156600A72A70 /* touchHelper.swift */,
+				EACF75121CAD486100D40919 /* imageKeyValidator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -379,7 +382,7 @@
 				TargetAttributes = {
 					EAC3FD9D1CA3F24B0083C500 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = KXQ8F9SK2C;
+						DevelopmentTeam = MWCPESMAGG;
 					};
 					EAC3FDB61CA3F4470083C500 = {
 						CreatedOnToolsVersion = 7.2;
@@ -572,6 +575,7 @@
 				1252C0B11CAD170600A72A70 /* uploadImage.swift in Sources */,
 				EACF750E1CAD243400D40919 /* moment.swift in Sources */,
 				B51E4E9B1CAC86D700B91177 /* DataService.swift in Sources */,
+				EACF75131CAD486100D40919 /* imageKeyValidator.swift in Sources */,
 				EAC3FDA21CA3F24B0083C500 /* AppDelegate.swift in Sources */,
 				1252C0A61CAD15DB00A72A70 /* SignInController.swift in Sources */,
 				1281C5981CA6B00A00BFD18F /* CreateMomentController.swift in Sources */,
@@ -739,7 +743,7 @@
 				);
 				INFOPLIST_FILE = moments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.makersmomentstcp.moments;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makersmomentsbmw.moments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "moments/moments-Bridging-Header.h";
@@ -761,7 +765,7 @@
 				);
 				INFOPLIST_FILE = moments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.makersmomentstcp.moments;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makersmomentsbmw.moments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "moments/moments-Bridging-Header.h";

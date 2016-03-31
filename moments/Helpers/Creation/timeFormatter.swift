@@ -1,8 +1,8 @@
 class Formatter {
-  func formatTime() -> NSDateFormatter {
+  func currentTime() -> String {
     let timestampFormatter = NSDateFormatter()
     timestampFormatter.dateStyle = .LongStyle
     timestampFormatter.timeStyle = .MediumStyle
-    return timestampFormatter
+    return timestampFormatter.stringFromDate(NSDate())
   }
 }

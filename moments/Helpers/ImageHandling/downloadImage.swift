@@ -16,8 +16,7 @@ extension MapController {
     task.continueWithBlock { (task) -> AnyObject! in
       if task.error != nil {
       } else {
-        let code = dispatch_async(dispatch_get_main_queue()
-          , { () -> Void in
+        let code = dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.image = UIImage(contentsOfFile: downloadingFilePath1)
         })
       }
