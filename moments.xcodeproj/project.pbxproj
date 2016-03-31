@@ -19,6 +19,9 @@
 		1281C5941CA6AEF200BFD18F /* CreateMomentUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5931CA6AEF200BFD18F /* CreateMomentUnitTests.swift */; };
 		1281C5981CA6B00A00BFD18F /* CreateMomentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5971CA6B00A00BFD18F /* CreateMomentController.swift */; };
 		1281C59A1CA6B24D00BFD18F /* MapControllerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5991CA6B24D00BFD18F /* MapControllerUnitTests.swift */; };
+		12A295F21CADC6BD002B15E9 /* constraintAdder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A295F11CADC6BD002B15E9 /* constraintAdder.swift */; };
+		12A295F41CADC7B6002B15E9 /* optionsAdder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A295F31CADC7B6002B15E9 /* optionsAdder.swift */; };
+		12A295F61CADC9C6002B15E9 /* imageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A295F51CADC9C6002B15E9 /* imageProcessor.swift */; };
 		12B7619A1CAA6C3E0044067E /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B761991CAA6C3E0044067E /* MapAnnotation.swift */; };
 		12B761A31CAA7EAD0044067E /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B761991CAA6C3E0044067E /* MapAnnotation.swift */; };
 		12B761A51CAA7EC40044067E /* MapAnnotationUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B761A41CAA7EC40044067E /* MapAnnotationUnitTests.swift */; };
@@ -78,6 +81,9 @@
 		1281C5931CA6AEF200BFD18F /* CreateMomentUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMomentUnitTests.swift; sourceTree = "<group>"; };
 		1281C5971CA6B00A00BFD18F /* CreateMomentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateMomentController.swift; path = moments/Controllers/CreateMomentController.swift; sourceTree = SOURCE_ROOT; };
 		1281C5991CA6B24D00BFD18F /* MapControllerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapControllerUnitTests.swift; sourceTree = "<group>"; };
+		12A295F11CADC6BD002B15E9 /* constraintAdder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constraintAdder.swift; sourceTree = "<group>"; };
+		12A295F31CADC7B6002B15E9 /* optionsAdder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = optionsAdder.swift; sourceTree = "<group>"; };
+		12A295F51CADC9C6002B15E9 /* imageProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageProcessor.swift; sourceTree = "<group>"; };
 		12B761991CAA6C3E0044067E /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapAnnotation.swift; path = moments/Models/MapAnnotation.swift; sourceTree = SOURCE_ROOT; };
 		12B761A41CAA7EC40044067E /* MapAnnotationUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotationUnitTests.swift; sourceTree = "<group>"; };
 		268328640982210A522001E5 /* Pods-momentsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-momentsUITests/Pods-momentsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -215,6 +221,9 @@
 			isa = PBXGroup;
 			children = (
 				71B7ADC61CAD7D0D001C3133 /* buildAnnotationView.swift */,
+				12A295F11CADC6BD002B15E9 /* constraintAdder.swift */,
+				12A295F31CADC7B6002B15E9 /* optionsAdder.swift */,
+				12A295F51CADC9C6002B15E9 /* imageProcessor.swift */,
 			);
 			path = Annotations;
 			sourceTree = "<group>";
@@ -598,8 +607,10 @@
 				B51E4E9B1CAC86D700B91177 /* DataService.swift in Sources */,
 				EACF75131CAD486100D40919 /* imageKeyValidator.swift in Sources */,
 				EAC3FDA21CA3F24B0083C500 /* AppDelegate.swift in Sources */,
+				12A295F41CADC7B6002B15E9 /* optionsAdder.swift in Sources */,
 				1252C0A61CAD15DB00A72A70 /* SignInController.swift in Sources */,
 				1281C5981CA6B00A00BFD18F /* CreateMomentController.swift in Sources */,
+				12A295F61CADC9C6002B15E9 /* imageProcessor.swift in Sources */,
 				1252C0B31CAD195E00A72A70 /* MapView.swift in Sources */,
 				1252C0AB1CAD16E400A72A70 /* facebookErrorHandler.swift in Sources */,
 				71B7ADC11CAD689D001C3133 /* saveToTemporaryDirectory.swift in Sources */,
@@ -607,6 +618,7 @@
 				1252C0B01CAD170600A72A70 /* downloadImage.swift in Sources */,
 				EAF439B41CA6B7B5009F014B /* OneShotLocationManager.swift in Sources */,
 				B51E4E9D1CAC871800B91177 /* Constants.swift in Sources */,
+				12A295F21CADC6BD002B15E9 /* constraintAdder.swift in Sources */,
 				71B7ADC41CAD6B48001C3133 /* uploadImageResultHandler.swift in Sources */,
 				12B7619A1CAA6C3E0044067E /* MapAnnotation.swift in Sources */,
 				1252C0AC1CAD16E400A72A70 /* facebookOAuthHandler.swift in Sources */,

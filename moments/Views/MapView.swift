@@ -35,32 +35,22 @@ extension MapController {
   }
   
   func configureDetailView(annotationView: MKAnnotationView, customAnnotation: MapAnnotation) {
-    print (customAnnotation.imageKey)
-    let width = 5
-    let height = 5
+    let width = 200
+    let height = 300
+    
     
     let snapshotView = UIView()
-    let views = ["snapshotView": snapshotView]
-    snapshotView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[snapshotView(\(width))]", options: [], metrics: nil, views: views))
-    snapshotView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[snapshotView(\(height))]", options: [], metrics: nil, views: views))
+    ConstraintAdder().run(snapshotView, width: width, height: height)
     
     let options = MKMapSnapshotOptions()
-    options.size = CGSize(width: width, height: height)
-    options.mapType = .SatelliteFlyover
-    options.camera = MKMapCamera(lookingAtCenterCoordinate: annotationView.annotation!.coordinate, fromDistance: 250, pitch: 65, heading: 0)
+    OptionsAdder().run(options, width: width, height: height, annotationView: annotationView)
     
     downloadImage(customAnnotation.imageKey)
     if customAnnotation.imageKey != "no image" {
+      print("This should run second")
       let snapshotter = MKMapSnapshotter(options: options)
       snapshotter.startWithCompletionHandler { snapshot, error in
-        if snapshot != nil {
-          let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
-          imageView.image = self.image
-            let textView = UILabel()
-            textView.text = "hello"
-            snapshotView.addSubview(textView)
-            
-        }
+          ImageProcessor().run(snapshot, width: width, height: height, image: self.image, snapshotView: snapshotView)
       }
       annotationView.detailCalloutAccessoryView = snapshotView
     }
