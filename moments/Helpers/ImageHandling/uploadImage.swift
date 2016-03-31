@@ -11,19 +11,8 @@ class UploadImage {
     uploadRequest.contentType = "image/"
     let transferManager = AWSS3TransferManager.defaultS3TransferManager()
     transferManager.upload(uploadRequest).continueWithBlock { (task) -> AnyObject! in
-      if let error = task.error {
-        print("Upload failed (\(error))")
-      }
-      if let exception = task.exception {
-        print("Upload failed (\(exception))")
-      }
-      if task.result != nil {
-        let s3URL = NSURL(string: "http://s3.amazonaws.com/makersmoments/\(uploadRequest.key!)")!
-        print("Uploaded to:\n\(s3URL)")
-      }
-      else {
-        print("Unexpected empty result.")
-      }
+        UploadImageErrorHandler().handle(task)
+        UploadImageResultHandler().handle(task, uploadRequest: uploadRequest)
       return nil
     }
   }
