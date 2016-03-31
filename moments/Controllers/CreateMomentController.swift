@@ -22,6 +22,7 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    print("FROM CREATE FORM VIEW: \(NSUserDefaults.standardUserDefaults().objectForKey("currentUser"))")
     pickerView.delegate = self
     textField.delegate = self
     imagePicker.delegate = self
