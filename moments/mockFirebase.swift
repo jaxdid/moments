@@ -5,9 +5,9 @@ import Firebase
 class MockFirebase: Firebase {
     
     var authError:NSError? = NSError(domain: "User authentication", code: 1, userInfo: nil)
-    var moment: Moment!
-    var moments: [Moment] = []
-    var current_user: Moment?
+    var mockMoment: MockMoment!
+    var mockMoments: [MockMoment] = []
+    var current_user: MockMoment?
     var snapshot: Snapshot?
     
     
@@ -20,9 +20,9 @@ class MockFirebase: Firebase {
         return Firebase()
     }
     
-    func createMoment(text: String!) {
-        moment = Moment(text: text)
-        moments += [moment]
+    func createMockMoment(text: String!) {
+        mockMoment = MockMoment(text: text)
+        mockMoments += [mockMoment]
     }
     
     override func unauth() {
@@ -31,7 +31,7 @@ class MockFirebase: Firebase {
     
 }
 
-class Moment: FMutableData{
+class MockMoment: FMutableData{
     var text: String!
     init?(text: String) {
         super.init()

@@ -14,9 +14,9 @@ class FirebaseMockSpec: QuickSpec {
       
       it("lets you create a moment"){
         
-        ref.createMoment("hello")
+        ref.createMockMoment("hello")
         
-        expect(ref.moment.text).to(equal("hello"))
+        expect(ref.mockMoment.text).to(equal("hello"))
       }
     }
     

@@ -11,24 +11,22 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   @IBOutlet weak var pickerView: UIPickerView!
   @IBOutlet weak var textField: UITextField!
   var userCoordinate: CLLocationCoordinate2D!
-  let s3bucket = "makersmoments"
-  let uploadRequest = AWSS3TransferManagerUploadRequest()
   private let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
-  private var userId: String!
-  private var userName: String!
+  private var uid: String!
+  var userName: String!
   private var selectedMomoji: String!
   private let characterLimit = 30
   private let imagePicker = UIImagePickerController()
-  
-  override func viewDidLoad() {
+  let uploadRequest = AWSS3TransferManagerUploadRequest()
+
+    override func viewDidLoad() {
     super.viewDidLoad()
+    print("FROM CREATE FORM VIEW: \(NSUserDefaults.standardUserDefaults().objectForKey("currentUser"))")
     pickerView.delegate = self
     textField.delegate = self
     imagePicker.delegate = self
-    momentsRef.observeAuthEventWithBlock { authData in
-      self.userId = authData.uid
-      self.userName = authData.providerData["displayName"] as? String
-    }
+    uid = NSUserDefaults.standardUserDefaults().objectForKey("currentUser")?["uid"]
+    userName = NSUserDefaults.standardUserDefaults().objectForKey("currentUser")?["name"]
     self.hideKeyboardWhenTappedAround()
   }
   
@@ -68,25 +66,16 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   }
   
   @IBAction func createMoment(sender: UIButton) {
-    let timestampFormatter = NSDateFormatter()
-    timestampFormatter.dateStyle = .LongStyle
-    timestampFormatter.timeStyle = .MediumStyle
-    
-    var imageKey: String
-    if self.uploadRequest.key == nil {
-      imageKey = "no image"
-    } else {
-      imageKey = self.uploadRequest.key!
-    }
-
-    let moment = ["momoji": selectedMomoji,
-                  "text": textField.text!,
-                  "latitude": userCoordinate.latitude,
-                  "longitude": userCoordinate.longitude,
-                  "userName": self.userName,
-                  "userId": self.userId,
-                  "timestamp": timestampFormatter.stringFromDate(NSDate()),
-                  "imageKey": imageKey]
+    let currentTime = Formatter().currentTime()
+      
+    let moment = Moment().build(selectedMomoji,
+                  text: textField.text!,
+                  latitude: userCoordinate.latitude,
+                  longitude: userCoordinate.longitude,
+                  userName: userName,
+                  uid: self.uid,
+                  timestamp: currentTime,
+                  imageKey: ImageKeyValidator().run(uploadRequest))
 
     let momentRef = momentsRef.childByAutoId()
     momentRef.setValue(moment)
@@ -96,18 +85,7 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
     
     
     let pickedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-    var url: NSURL
-    if let img: UIImage = pickedImage as UIImage {
-      let path = (NSTemporaryDirectory() as NSString).stringByAppendingPathComponent("image.jpg")
-      let imageData: NSData = UIImageJPEGRepresentation(img, 0.01)!
-      imageData.writeToFile(path as String, atomically: true)
-      
-      url = NSURL(fileURLWithPath: path as String)
-      uploadImage(url)
-      
-      dismissViewControllerAnimated(true, completion: nil)
-    }
-    
+    SaveToTemporaryDirectory().run(self, pickedImage: pickedImage, uploadRequest: uploadRequest)
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
     }
   }
