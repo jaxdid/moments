@@ -47,6 +47,7 @@
 		EACF75101CAD305700D40919 /* MomentUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACF750F1CAD305700D40919 /* MomentUnitTests.swift */; };
 		EACF75111CAD329D00D40919 /* moment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACF750D1CAD243400D40919 /* moment.swift */; };
 		EACF75131CAD486100D40919 /* imageKeyValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACF75121CAD486100D40919 /* imageKeyValidator.swift */; };
+		EACF751A1CAD83CA00D40919 /* MapViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACF75191CAD83CA00D40919 /* MapViewUpdater.swift */; };
 		EAD58E381CA437C800E85D4C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD58E371CA437C800E85D4C /* CoreLocation.framework */; };
 		EAF439B41CA6B7B5009F014B /* OneShotLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF439B31CA6B7B5009F014B /* OneShotLocationManager.swift */; };
 /* End PBXBuildFile section */
@@ -119,6 +120,7 @@
 		EACF750D1CAD243400D40919 /* moment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = moment.swift; sourceTree = "<group>"; };
 		EACF750F1CAD305700D40919 /* MomentUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentUnitTests.swift; sourceTree = "<group>"; };
 		EACF75121CAD486100D40919 /* imageKeyValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageKeyValidator.swift; sourceTree = "<group>"; };
+		EACF75191CAD83CA00D40919 /* MapViewUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewUpdater.swift; sourceTree = "<group>"; };
 		EAD58E371CA437C800E85D4C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		EAF439B31CA6B7B5009F014B /* OneShotLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OneShotLocationManager.swift; path = ../OneShotLocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +165,7 @@
 				1252C0A71CAD165A00A72A70 /* Authentication */,
 				1252C0991CAD156600A72A70 /* touchHelper.swift */,
 				EACF75121CAD486100D40919 /* imageKeyValidator.swift */,
+				EACF75191CAD83CA00D40919 /* MapViewUpdater.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				EACF750C1CAD1E8600D40919 /* timeFormatter.swift in Sources */,
 				C18A423C1CA95EBF00444D6E /* mockFirebase.swift in Sources */,
 				1252C0B11CAD170600A72A70 /* uploadImage.swift in Sources */,
+				EACF751A1CAD83CA00D40919 /* MapViewUpdater.swift in Sources */,
 				EACF750E1CAD243400D40919 /* moment.swift in Sources */,
 				EACF75131CAD486100D40919 /* imageKeyValidator.swift in Sources */,
 				EAC3FDA21CA3F24B0083C500 /* AppDelegate.swift in Sources */,

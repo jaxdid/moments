@@ -12,7 +12,7 @@ extension MapController {
     
     let customAnnotation = annotation as! MapAnnotation
     let reuseId = customAnnotation.momentId!
-    
+
     let annotationView = BuildAnnotationView().run(mapView, reuseId: reuseId, annotation: annotation, customAnnotation: customAnnotation)
     
     configureDetailView(annotationView!, customAnnotation: customAnnotation)
