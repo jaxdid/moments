@@ -74,8 +74,8 @@ extension MapController {
     options.mapType = .SatelliteFlyover
     options.camera = MKMapCamera(lookingAtCenterCoordinate: annotationView.annotation!.coordinate, fromDistance: 250, pitch: 65, heading: 0)
     
+    downloadImage(customAnnotation.imageKey)
     if customAnnotation.imageKey != "no image" {
-      var download = downloadImage(customAnnotation.imageKey)
       let snapshotter = MKMapSnapshotter(options: options)
       snapshotter.startWithCompletionHandler { snapshot, error in
         if snapshot != nil {
