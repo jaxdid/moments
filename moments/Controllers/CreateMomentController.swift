@@ -14,8 +14,8 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   let s3bucket = "makersmoments"
   let uploadRequest = AWSS3TransferManagerUploadRequest()
   private let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
-  private var userId: String!
-  private var userName: String!
+  private var uid: String!
+  var userName: String!
   private var selectedMomoji: String!
   private let characterLimit = 30
   private let imagePicker = UIImagePickerController()
@@ -26,10 +26,8 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
     pickerView.delegate = self
     textField.delegate = self
     imagePicker.delegate = self
-    momentsRef.observeAuthEventWithBlock { authData in
-      self.userId = authData.uid
-      self.userName = authData.providerData["displayName"] as? String
-    }
+    uid = NSUserDefaults.standardUserDefaults().objectForKey("currentUser")?["uid"]
+    userName = NSUserDefaults.standardUserDefaults().objectForKey("currentUser")?["name"]
     self.hideKeyboardWhenTappedAround()
   }
   
@@ -69,9 +67,8 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
   }
   
   @IBAction func createMoment(sender: UIButton) {
-    let timestampFormatter = NSDateFormatter()
-    timestampFormatter.dateStyle = .LongStyle
-    timestampFormatter.timeStyle = .MediumStyle
+    
+    let formatTime = Formatter().formatTime()
     
     var imageKey: String
     if self.uploadRequest.key == nil {
@@ -79,15 +76,14 @@ class CreateMomentController: UIViewController, UIPickerViewDelegate, UITextFiel
     } else {
       imageKey = self.uploadRequest.key!
     }
-
-    let moment = ["momoji": selectedMomoji,
-                  "text": textField.text!,
-                  "latitude": userCoordinate.latitude,
-                  "longitude": userCoordinate.longitude,
-                  "userName": self.userName,
-                  "userId": self.userId,
-                  "timestamp": timestampFormatter.stringFromDate(NSDate()),
-                  "imageKey": imageKey]
+    let moment = Moment().build(selectedMomoji,
+                  text: textField.text!,
+                  latitude: userCoordinate.latitude,
+                  longitude: userCoordinate.longitude,
+                  userName: userName,
+                  uid: self.uid,
+                  timestamp: formatTime.stringFromDate(NSDate()),
+                  imageKey: imageKey)
 
     let momentRef = momentsRef.childByAutoId()
     momentRef.setValue(moment)

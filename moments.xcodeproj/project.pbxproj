@@ -36,6 +36,10 @@
 		EAC3FDA91CA3F24B0083C500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAC3FDA81CA3F24B0083C500 /* Assets.xcassets */; };
 		EAC3FDAC1CA3F24B0083C500 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAC3FDAA1CA3F24B0083C500 /* LaunchScreen.storyboard */; };
 		EAC3FDBA1CA3F4470083C500 /* momentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3FDB91CA3F4470083C500 /* momentsUITests.swift */; };
+		EACF750C1CAD1E8600D40919 /* timeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACF750B1CAD1E8600D40919 /* timeFormatter.swift */; };
+		EACF750E1CAD243400D40919 /* moment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACF750D1CAD243400D40919 /* moment.swift */; };
+		EACF75101CAD305700D40919 /* MomentUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACF750F1CAD305700D40919 /* MomentUnitTests.swift */; };
+		EACF75111CAD329D00D40919 /* moment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACF750D1CAD243400D40919 /* moment.swift */; };
 		EAD58E381CA437C800E85D4C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD58E371CA437C800E85D4C /* CoreLocation.framework */; };
 		EAF439B41CA6B7B5009F014B /* OneShotLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF439B31CA6B7B5009F014B /* OneShotLocationManager.swift */; };
 /* End PBXBuildFile section */
@@ -98,6 +102,9 @@
 		EAC3FDBB1CA3F4470083C500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAC3FDC51CA3F4580083C500 /* momentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = momentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC3FDC91CA3F4580083C500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EACF750B1CAD1E8600D40919 /* timeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timeFormatter.swift; sourceTree = "<group>"; };
+		EACF750D1CAD243400D40919 /* moment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = moment.swift; sourceTree = "<group>"; };
+		EACF750F1CAD305700D40919 /* MomentUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentUnitTests.swift; sourceTree = "<group>"; };
 		EAD58E371CA437C800E85D4C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		EAF439B31CA6B7B5009F014B /* OneShotLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OneShotLocationManager.swift; path = ../OneShotLocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +143,7 @@
 		122876DA1CA91D5B0022783E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				EACF750A1CAD1E2900D40919 /* Creation */,
 				1252C0AD1CAD16EC00A72A70 /* ImageHandlers */,
 				1252C0A71CAD165A00A72A70 /* Authentication */,
 				1252C0991CAD156600A72A70 /* touchHelper.swift */,
@@ -175,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				12B761991CAA6C3E0044067E /* MapAnnotation.swift */,
+				EACF750D1CAD243400D40919 /* moment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -281,8 +290,17 @@
 				1281C5991CA6B24D00BFD18F /* MapControllerUnitTests.swift */,
 				C18A42391CA94C5F00444D6E /* FirebaseMockSpec.swift */,
 				12B761A41CAA7EC40044067E /* MapAnnotationUnitTests.swift */,
+				EACF750F1CAD305700D40919 /* MomentUnitTests.swift */,
 			);
 			path = momentsTests;
+			sourceTree = "<group>";
+		};
+		EACF750A1CAD1E2900D40919 /* Creation */ = {
+			isa = PBXGroup;
+			children = (
+				EACF750B1CAD1E8600D40919 /* timeFormatter.swift */,
+			);
+			path = Creation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -549,8 +567,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1252C0A51CAD15DB00A72A70 /* MapController.swift in Sources */,
+				EACF750C1CAD1E8600D40919 /* timeFormatter.swift in Sources */,
 				C18A423C1CA95EBF00444D6E /* mockFirebase.swift in Sources */,
 				1252C0B11CAD170600A72A70 /* uploadImage.swift in Sources */,
+				EACF750E1CAD243400D40919 /* moment.swift in Sources */,
 				B51E4E9B1CAC86D700B91177 /* DataService.swift in Sources */,
 				EAC3FDA21CA3F24B0083C500 /* AppDelegate.swift in Sources */,
 				1252C0A61CAD15DB00A72A70 /* SignInController.swift in Sources */,
@@ -578,12 +598,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EACF75101CAD305700D40919 /* MomentUnitTests.swift in Sources */,
 				716DCF241CA9665A00B9A651 /* mockFirebase.swift in Sources */,
 				12B761A51CAA7EC40044067E /* MapAnnotationUnitTests.swift in Sources */,
 				12B761A31CAA7EAD0044067E /* MapAnnotation.swift in Sources */,
 				1281C59A1CA6B24D00BFD18F /* MapControllerUnitTests.swift in Sources */,
 				1281C5941CA6AEF200BFD18F /* CreateMomentUnitTests.swift in Sources */,
 				C18A423A1CA94C5F00444D6E /* FirebaseMockSpec.swift in Sources */,
+				EACF75111CAD329D00D40919 /* moment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
