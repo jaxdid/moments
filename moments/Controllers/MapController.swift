@@ -10,7 +10,7 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
   private var momentsRef: Firebase!
   private var addedHandle, removedHandle: UInt!
   private var locationManager: OneShotLocationManager?
-  private var userCoordinate: CLLocationCoordinate2D!
+  var userCoordinate: CLLocationCoordinate2D!
   var image: UIImage!
   
   override func viewDidLoad() {
