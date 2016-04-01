@@ -1,7 +1,6 @@
 import UIKit
 import CoreLocation
 
-//possible errors
 enum OneShotLocationManagerErrors: Int {
   case AuthorizationDenied
   case AuthorizationNotDetermined
@@ -9,11 +8,8 @@ enum OneShotLocationManagerErrors: Int {
 }
 
 class OneShotLocationManager: NSObject, CLLocationManagerDelegate {
+    private var locationManager: CLLocationManager?
   
-  //location manager
-  private var locationManager: CLLocationManager?
-  
-  //destroy the manager
   deinit {
     locationManager?.delegate = nil
     locationManager = nil
@@ -22,7 +18,6 @@ class OneShotLocationManager: NSObject, CLLocationManagerDelegate {
   typealias LocationClosure = ((location: CLLocation?, error: NSError?)->())
   private var didComplete: LocationClosure?
   
-  //location manager returned, call didcomplete closure
   private func _didComplete(location: CLLocation?, error: NSError?) {
     locationManager?.stopUpdatingLocation()
     didComplete?(location: location, error: error)
@@ -30,7 +25,6 @@ class OneShotLocationManager: NSObject, CLLocationManagerDelegate {
     locationManager = nil
   }
   
-  //location authorization status changed
   func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
     
     switch status {
@@ -54,17 +48,13 @@ class OneShotLocationManager: NSObject, CLLocationManagerDelegate {
     _didComplete(location, error: nil)
   }
   
-  //ask for location permissions, fetch 1 location, and return
   func fetchWithCompletion(completion: LocationClosure) {
-    //store the completion closure
     didComplete = completion
     
-    //fire the location manager
     locationManager = CLLocationManager()
     locationManager!.delegate = self
     locationManager!.desiredAccuracy = kCLLocationAccuracyBest
     
-    //check for description key and ask permissions
     if (NSBundle.mainBundle().objectForInfoDictionaryKey("NSLocationWhenInUseUsageDescription") != nil) {
       locationManager!.requestWhenInUseAuthorization()
     } else if (NSBundle.mainBundle().objectForInfoDictionaryKey("NSLocationAlwaysUsageDescription") != nil) {

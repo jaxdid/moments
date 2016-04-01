@@ -12,7 +12,7 @@ class FacebookOAuthHandler {
       } else if authData != nil {
         print("Logged in! \(authData)")
         let currentUser = ["uid": authData.uid,
-                       "name": authData.providerData["displayName"] as? String]
+                           "name": authData.providerData["displayName"] as? String]
         NSUserDefaults.standardUserDefaults().setObject(currentUser, forKey: "currentUser")
         controller.performSegueWithIdentifier("signIn", sender: nil)
       }

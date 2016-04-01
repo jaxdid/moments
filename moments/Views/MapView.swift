@@ -5,18 +5,16 @@ import UIKit
 
 extension MapController {
   func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-    
     if (annotation is MKUserLocation) {
       return nil
     }
     
     let customAnnotation = annotation as! MapAnnotation
     let reuseId = customAnnotation.momentId!
-    
+
     let annotationView = BuildAnnotationView().run(mapView, reuseId: reuseId, annotation: annotation, customAnnotation: customAnnotation)
     
     configureDetailView(annotationView!, customAnnotation: customAnnotation)
-    
     
     return annotationView
   }
@@ -38,7 +36,6 @@ extension MapController {
     let width = 200
     let height = 300
     
-    
     let snapshotView = UIView()
     ConstraintAdder().run(snapshotView, width: width, height: height)
     
@@ -47,7 +44,6 @@ extension MapController {
     
     downloadImage(customAnnotation.imageKey)
     if customAnnotation.imageKey != "no image" {
-      print("This should run second")
       let snapshotter = MKMapSnapshotter(options: options)
       snapshotter.startWithCompletionHandler { snapshot, error in
           ImageProcessor().run(snapshot, width: width, height: height, image: self.image, snapshotView: snapshotView)
