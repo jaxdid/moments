@@ -46,7 +46,7 @@ extension MapController {
     if customAnnotation.imageKey != "no image" {
       let snapshotter = MKMapSnapshotter(options: options)
       snapshotter.startWithCompletionHandler { snapshot, error in
-          ImageProcessor().run(snapshot, width: width, height: height, image: self.image, snapshotView: snapshotView)
+          //ImageProcessor().run(snapshot, width: width, height: height, image: self.image, snapshotView: snapshotView)
       }
       annotationView.detailCalloutAccessoryView = snapshotView
     }

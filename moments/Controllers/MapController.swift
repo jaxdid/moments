@@ -7,7 +7,8 @@ import AWSS3
 class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
   @IBOutlet var map: MKMapView!
   @IBOutlet weak var imageView: UIImageView!
-  private let momentsRef = Firebase(url: MOMENTS_URL)
+  private var momentsRef: Firebase!
+  private var addedHandle, removedHandle: UInt!
   private var locationManager: OneShotLocationManager?
   private var userCoordinate: CLLocationCoordinate2D!
   var image: UIImage!
@@ -15,11 +16,26 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
   override func viewDidLoad() {
     super.viewDidLoad()
     map.delegate = self
-    momentsRef.observeEventType(.ChildAdded, withBlock: { snapshot in
+    momentsRef = Firebase(url: MOMENTS_URL)
+    self.centerMapOnUser()
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    addedHandle = momentsRef.observeEventType(.ChildAdded, withBlock: { snapshot in
       let moment = AnnotationBuilder().run(snapshot)
       self.map.addAnnotation(moment)
     })
-    self.centerMapOnUser()
+    
+    removedHandle = momentsRef.observeEventType(.ChildRemoved, withBlock: { snapshot in
+    })
+  }
+  
+  override func viewDidDisappear(animated: Bool) {
+    super.viewDidDisappear(animated)
+    momentsRef.removeObserverWithHandle(addedHandle)
+    momentsRef.removeObserverWithHandle(removedHandle)
+    map.removeAnnotations(map.annotations)
   }
   
   override func didReceiveMemoryWarning() {
