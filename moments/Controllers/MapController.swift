@@ -5,57 +5,36 @@ import UIKit
 import AWSS3
 
 class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-  private let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
   @IBOutlet var map: MKMapView!
-  var userCoordinate: CLLocationCoordinate2D!
-  internal var locationManager: OneShotLocationManager?
+  @IBOutlet weak var imageView: UIImageView!
+  private let momentsRef = Firebase(url: MOMENTS_URL)
+  private var locationManager: OneShotLocationManager?
+  private var userCoordinate: CLLocationCoordinate2D!
   var image: UIImage!
-  
-  @IBOutlet weak var imageVIew: UIImageView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     map.delegate = self
     momentsRef.observeEventType(.ChildAdded, withBlock: { snapshot in
-      let latitude = snapshot.value.objectForKey("latitude") as! Double
-      let longitude = snapshot.value.objectForKey("longitude") as! Double
-      let text = snapshot.value.objectForKey("text") as! String
-      let momoji = snapshot.value.objectForKey("momoji") as! String
-      let momentId = snapshot.key
-      let timestamp = snapshot.value.objectForKey("timestamp") as! String
-      let uid = snapshot.value.objectForKey("userId") as! String
-      let userName = snapshot.value.objectForKey("userName") as! String
-      let imageKey = snapshot.value.objectForKey("imageKey") as! String
-  
-      let moment = MapAnnotation(momentId: momentId,
-                                 title: "\(text)",
-                                 subtitle: "\(timestamp) by \(userName)",
-                                 coordinate: CLLocationCoordinate2DMake(latitude, longitude),
-                                 momoji: momoji,
-                                 timestamp: timestamp,
-                                 uid: uid,
-                                 imageKey: imageKey)
-      
+      let moment = AnnotationBuilder().run(snapshot)
       self.map.addAnnotation(moment)
     })
-
-    self.focusMapOnUser()
+    self.centerMapOnUser()
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
   
-  @IBAction func focusMapOnUser() {
+  @IBAction func centerMapOnUser() {
     locationManager = OneShotLocationManager()
     locationManager!.fetchWithCompletion {location, error in
-      if let err = error {
-      print(err.localizedDescription)
-    }
-    else if let unwrappedLocation = location {
-      self.userCoordinate = unwrappedLocation.coordinate
-      MapViewUpdater().build(self.map, userCoordinate: unwrappedLocation.coordinate)
-    }
+      if let unwrappedLocation = location {
+        self.userCoordinate = unwrappedLocation.coordinate
+        MapViewUpdater().run(self.map, userCoordinate: unwrappedLocation.coordinate)
+      } else if let err = error {
+        print(err.localizedDescription)
+      }
     }
   }
   

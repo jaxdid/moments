@@ -15,7 +15,7 @@ class BuildAnnotationView {
                 annotationView?.image = UIImage(named:"grinning_face")
             }
             annotationView?.canShowCallout = true
-            let momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
+            let momentsRef = Firebase(url: MOMENTS_URL)
             momentsRef.observeAuthEventWithBlock { authData in
                 if customAnnotation.uid == authData.uid {
                     print("Moment owner: \(customAnnotation.uid)")
