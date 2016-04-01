@@ -16,7 +16,7 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
   override func viewDidLoad() {
     super.viewDidLoad()
     map.delegate = self
-    momentsRef = Firebase(url: MOMENTS_URL)
+    momentsRef = Firebase(url: "https://makersmoments.firebaseio.com/moments")
     self.centerMapOnUser()
   }
   

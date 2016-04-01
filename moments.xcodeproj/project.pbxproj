@@ -32,7 +32,6 @@
 		71B7ADC71CAD7D0D001C3133 /* buildAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7ADC61CAD7D0D001C3133 /* buildAnnotationView.swift */; };
 		7C1E3787DDC02B4476C88C1E /* Pods_moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8B740496CE114ACD764FFF /* Pods_moments.framework */; };
 		AD0818E1407656E1ADE6563F /* Pods_momentsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F11029ECB8F52936E84157A /* Pods_momentsUITests.framework */; };
-		B51E4E9D1CAC871800B91177 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51E4E9C1CAC871800B91177 /* Constants.swift */; };
 		B558338A1CA472C90039E04C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55833891CA472C90039E04C /* FBSDKCoreKit.framework */; };
 		B558338C1CA474BD0039E04C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B558338B1CA474BD0039E04C /* FBSDKLoginKit.framework */; };
 		B57F468B1CADDEA70060506C /* annotationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57F468A1CADDEA70060506C /* annotationBuilder.swift */; };
@@ -99,7 +98,6 @@
 		71B7ADC61CAD7D0D001C3133 /* buildAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = buildAnnotationView.swift; sourceTree = "<group>"; };
 		80B5C720F8B205219D4BC161 /* Pods-momentsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-momentsTests/Pods-momentsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A7382FDB7B04DB49BE9BA27C /* Pods-moments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moments.release.xcconfig"; path = "Pods/Target Support Files/Pods-moments/Pods-moments.release.xcconfig"; sourceTree = "<group>"; };
-		B51E4E9C1CAC871800B91177 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B55833891CA472C90039E04C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		B558338B1CA474BD0039E04C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		B57F468A1CADDEA70060506C /* annotationBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = annotationBuilder.swift; sourceTree = "<group>"; };
@@ -299,7 +297,6 @@
 				EAC3FDAD1CA3F24B0083C500 /* Info.plist */,
 				C18A423B1CA95EBF00444D6E /* mockFirebase.swift */,
 				C17F844C1CAAE0C500203E36 /* moments-Bridging-Header.h */,
-				B51E4E9C1CAC871800B91177 /* Constants.swift */,
 			);
 			path = moments;
 			sourceTree = "<group>";
@@ -621,7 +618,6 @@
 				1252C0B01CAD170600A72A70 /* downloadImage.swift in Sources */,
 				B57F468D1CADF64E0060506C /* pickerViewBuilder.swift in Sources */,
 				EAF439B41CA6B7B5009F014B /* OneShotLocationManager.swift in Sources */,
-				B51E4E9D1CAC871800B91177 /* Constants.swift in Sources */,
 				12A295F21CADC6BD002B15E9 /* constraintAdder.swift in Sources */,
 				71B7ADC41CAD6B48001C3133 /* uploadImageResultHandler.swift in Sources */,
 				12B7619A1CAA6C3E0044067E /* MapAnnotation.swift in Sources */,

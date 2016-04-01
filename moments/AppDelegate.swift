@@ -10,19 +10,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var keys: NSDictionary?
   
   func applicationWillResignActive(application: UIApplication) {
-    
   }
   
   func applicationDidEnterBackground(application: UIApplication) {
-    
   }
   
   func applicationWillEnterForeground(application: UIApplication) {
-    
   }
   
   func applicationWillTerminate(application: UIApplication) {
-    
   }
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

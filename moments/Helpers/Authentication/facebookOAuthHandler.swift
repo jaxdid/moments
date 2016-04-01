@@ -3,7 +3,7 @@ import Firebase
 
 class FacebookOAuthHandler {
   func run(controller: SignInController) {
-    let ref = Firebase(url: BASE_URL)
+    let ref = Firebase(url: "https://makersmoments.firebaseio.com")
     let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
     
     ref.authWithOAuthProvider("facebook", token: accessToken, withCompletionBlock: { error, authData in
@@ -12,10 +12,8 @@ class FacebookOAuthHandler {
       } else if authData != nil {
         print("Logged in! \(authData)")
         let currentUser = ["uid": authData.uid,
-                       "name": authData.providerData["displayName"] as? String]
-        //print("Current user before assignment: \(CURRENT_USER)")
+                           "name": authData.providerData["displayName"] as? String]
         NSUserDefaults.standardUserDefaults().setObject(currentUser, forKey: "currentUser")
-        //print("Current user after assignment: \(CURRENT_USER)")
         controller.performSegueWithIdentifier("signIn", sender: nil)
       }
     })
