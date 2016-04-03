@@ -28,13 +28,12 @@ extension MapController {
     
     if control == annotationView.rightCalloutAccessoryView {
       momentPathRef.removeValue()
-      mapView.removeAnnotation(customAnnotation)
     }
   }
   
   func configureDetailView(annotationView: MKAnnotationView, customAnnotation: MapAnnotation) {
-    let width = 200
-    let height = 300
+    let width = 166
+    let height = 200
     
     let snapshotView = UIView()
     ConstraintAdder().run(snapshotView, width: width, height: height)

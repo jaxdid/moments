@@ -22,12 +22,20 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
+    
     addedHandle = momentsRef.observeEventType(.ChildAdded, withBlock: { snapshot in
+      print("Moment ADDED!")
       let moment = AnnotationBuilder().run(snapshot)
       self.map.addAnnotation(moment)
     })
     
     removedHandle = momentsRef.observeEventType(.ChildRemoved, withBlock: { snapshot in
+      print("Moment DELETED!")
+      for annotation in self.map.annotations {
+        if annotation is MKUserLocation || (annotation as! MapAnnotation).momentId == snapshot.key {
+          self.map.removeAnnotation(annotation)
+        }
+      }
     })
   }
   
@@ -35,7 +43,6 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
     super.viewDidDisappear(animated)
     momentsRef.removeObserverWithHandle(addedHandle)
     momentsRef.removeObserverWithHandle(removedHandle)
-    map.removeAnnotations(map.annotations)
   }
   
   override func didReceiveMemoryWarning() {

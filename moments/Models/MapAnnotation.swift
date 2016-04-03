@@ -4,7 +4,7 @@ class MapAnnotation: NSObject, MKAnnotation {
   let momentId: String?
   let title: String?
   let subtitle: String?
-  let coordinate: CLLocationCoordinate2D
+  dynamic var coordinate: CLLocationCoordinate2D
   let momoji: String!
   let timestamp: String?
   let uid: String?
