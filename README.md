@@ -1,4 +1,5 @@
 #Moments
+_Makers Academy final project (Week 12)_
 
 ## Authors
 - Alain Lemaire - https://github.com/jaxdid
